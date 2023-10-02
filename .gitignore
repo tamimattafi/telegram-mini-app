@@ -1,0 +1,16 @@
+.DS_STORE
+*~
+*.pyc
+.grunt
+_SpecRunner.html
+__benchmarks__
+build/
+.module-cache
+*.log*
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
