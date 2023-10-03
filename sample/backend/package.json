@@ -1,21 +1,23 @@
 {
   "name": "backend",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
+  "description": "MiniAppSample",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node -r dotenv/config src/index.ts",
+    "start": "node -r dotenv/config src/index.js",
     "start:dev": "nodemon --exec \"npm start\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Attafi Tamim",
+  "license": "Apache 2.0",
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
+    "@types/node": "^20.8.2",
+    "nodemon": "^3.0.1"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
-    "telegraf": "^4.14.0"
+    "telegraf": "^4.14.0",
+    "typegram": "^5.2.0"
   }
 }
