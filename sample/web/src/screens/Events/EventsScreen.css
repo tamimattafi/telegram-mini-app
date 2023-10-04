@@ -1,0 +1,6 @@
+.eventsScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}

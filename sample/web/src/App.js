@@ -1,23 +1,30 @@
 import './App.css';
 import {useEffect} from "react";
-
-const telegram = window.Telegram.WebApp
+import {useTelegram} from "./hooks/Telegram";
+import {Route, Routes} from "react-router-dom";
+import Main from "./screens/Main/MainScreen";
+import ButtonsScreen from "./screens/Buttons/ButtonsScreen";
+import DataScreen from "./screens/Data/DataScreen";
+import EventsScreen from "./screens/Events/EventsScreen";
+import InputsScreen from "./screens/Inputs/InputsScreen";
+import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS, PATH_MAIN} from "./screens/Global/Paths";
 
 function App() {
+    const { webApp } = useTelegram()
     useEffect(() => {
-        telegram.ready()
+        webApp.ready()
     }, [])
-
-    const onClose = () => {
-        telegram.close()
-    }
 
     return (
         <div className="App">
-          <header className="App-header">
-            <h1>Hi</h1>
-            <button onClick={onClose}>Exit</button>
-          </header>
+            <Routes>
+                <Route index element={<Main/>}/>
+                <Route path={PATH_MAIN} element={<Main/>}/>
+                <Route path={PATH_BUTTONS} element={<ButtonsScreen/>}/>
+                <Route path={PATH_DATA} element={<DataScreen/>}/>
+                <Route path={PATH_EVENTS} element={<EventsScreen/>}/>
+                <Route path={PATH_INPUTS} element={<InputsScreen/>}/>
+            </Routes>
         </div>
     );
 }
