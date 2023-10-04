@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../../components/Header/Header";
 import Text from "../../components/Text/Text";
-import {useTelegram} from "../../hooks/Telegram";
+import {useTelegram} from "../../hooks/useTelegram";
 import './DataScreen.css';
 
 const DataScreen = () => {

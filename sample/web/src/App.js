@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect} from "react";
-import {useTelegram} from "./hooks/Telegram";
+import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes} from "react-router-dom";
 import Main from "./screens/Main/MainScreen";
 import ButtonsScreen from "./screens/Buttons/ButtonsScreen";
@@ -10,7 +10,8 @@ import InputsScreen from "./screens/Inputs/InputsScreen";
 import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS, PATH_MAIN} from "./screens/Global/Paths";
 
 function App() {
-    const { webApp } = useTelegram()
+    const {webApp} = useTelegram()
+
     useEffect(() => {
         webApp.ready()
     }, [])

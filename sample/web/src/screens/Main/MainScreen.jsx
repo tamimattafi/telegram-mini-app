@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../../components/Header/Header";
 import Text from "../../components/Text/Text";
 import Button from "../../components/Button/Button";
-import {useTelegram} from "../../hooks/Telegram";
+import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
 import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS} from "../Global/Paths";
 import './MainScreen.css';
