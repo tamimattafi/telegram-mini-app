@@ -3,9 +3,9 @@ import TelegramHeader from "../../components/Header/TelegramHeader";
 import TelegramText from "../../components/Text/TelegramText";
 import TelegramButton from "../../components/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
-import './ButtonsScreen.css';
+import './FunctionsScreen.css';
 
-const ButtonsScreen = () => {
+const FunctionsScreen = () => {
     const {webApp} = useTelegram()
 
     const onToggleMainButton = () => {
@@ -29,11 +29,10 @@ const ButtonsScreen = () => {
     }
 
     return (
-        <div className={'buttonsScreen'}>
+        <div className={'functionsScreen'}>
             <TelegramHeader>
-                <TelegramText className={'telegramTitle'}>Buttons Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Functions Screen</TelegramText>
             </TelegramHeader>
-
 
             <TelegramButton onClick={onToggleMainButton}>Toggle Menu Button</TelegramButton>
             <TelegramButton onClick={onToggleBackButton}>Toggle Back Button</TelegramButton>
@@ -42,4 +41,4 @@ const ButtonsScreen = () => {
     );
 };
 
-export default ButtonsScreen;
+export default FunctionsScreen;
