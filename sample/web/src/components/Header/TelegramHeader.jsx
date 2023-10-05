@@ -3,7 +3,7 @@ import './TelegramHeader.css';
 
 const TelegramHeader = (props) => {
     return (
-        <div {...props} className={'header ' + props.className}/>
+        <div {...props} className={'telegramHeader ' + props.className}/>
     );
 };
 

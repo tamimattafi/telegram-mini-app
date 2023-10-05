@@ -3,7 +3,7 @@ import './TelegramButton.css';
 
 const TelegramButton = (props) => {
     return (
-        <button {...props} className={'button ' + props.className}/>
+        <button {...props} className={'telegramButton ' + props.className}/>
     );
 };
 

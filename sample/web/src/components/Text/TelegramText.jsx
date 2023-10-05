@@ -3,7 +3,7 @@ import './TelegramText.css';
 
 const TelegramText = (props) => {
     return (
-        <p {...props} className={'text ' + props.className}/>
+        <p {...props} className={'telegramText ' + props.className}/>
     );
 };
 
