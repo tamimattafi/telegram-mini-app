@@ -1,10 +1,10 @@
 import React from 'react';
-import './Header.css';
+import './TelegramHeader.css';
 
-const Header = (props) => {
+const TelegramHeader = (props) => {
     return (
         <div {...props} className={'header ' + props.className}/>
     );
 };
 
-export default Header;
+export default TelegramHeader;

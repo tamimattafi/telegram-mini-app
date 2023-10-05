@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "../../components/Header/Header";
-import Text from "../../components/Text/Text";
+import TelegramHeader from "../../components/Header/TelegramHeader";
+import TelegramText from "../../components/Text/TelegramText";
 import {useTelegram} from "../../hooks/useTelegram";
 import './DataScreen.css';
 
@@ -8,12 +8,12 @@ const DataScreen = () => {
     const { webApp } = useTelegram()
     return (
         <div className={'dataScreen'}>
-            <Header>
-                <Text>Data Screen</Text>
-            </Header>
+            <TelegramHeader>
+                <TelegramText>Data Screen</TelegramText>
+            </TelegramHeader>
 
-            <Text>initDataUnsafe:</Text>
-            <Text>{JSON.stringify(webApp.initDataUnsafe)}</Text>
+            <TelegramText>initDataUnsafe:</TelegramText>
+            <TelegramText>{JSON.stringify(webApp.initDataUnsafe)}</TelegramText>
         </div>
     );
 };

@@ -1,0 +1,1 @@
+export const MAIN_BUTTON_CLICK_EVENT = 'mainButtonClicked'

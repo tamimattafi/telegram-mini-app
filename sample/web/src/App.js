@@ -7,14 +7,14 @@ import ButtonsScreen from "./screens/Buttons/ButtonsScreen";
 import DataScreen from "./screens/Data/DataScreen";
 import EventsScreen from "./screens/Events/EventsScreen";
 import InputsScreen from "./screens/Inputs/InputsScreen";
-import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS, PATH_MAIN} from "./screens/Global/Paths";
+import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS, PATH_MAIN} from "./constants/Paths";
 
 function App() {
     const {webApp} = useTelegram()
 
     useEffect(() => {
         webApp.ready()
-    }, [])
+    }, [webApp])
 
     return (
         <div className="App">

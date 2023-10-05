@@ -40,7 +40,7 @@ function listenToCommands(bot) {
             reply_markup: {
                 inline_keyboard: [
                     /* Inline buttons. 2 side-by-side */
-                    [ { text: "Start Mini App", web_app: { url: "https://www.google.com" } } ],
+                    [ { text: "Start Mini App", web_app: { url: "https://starlit-lokum-76ba47.netlify.app/" } } ],
                 ]
             }
         })
@@ -102,7 +102,7 @@ function listenToQueries(bot) {
 }
 
 /**
- * Listens to stop events and performs a graceful stop
+ * Listens to process stop events and performs a graceful bot stop
  *
  * @param bot Telegraf bot instance
  *

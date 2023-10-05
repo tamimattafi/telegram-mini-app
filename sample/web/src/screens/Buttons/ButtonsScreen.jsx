@@ -1,20 +1,42 @@
 import React from 'react';
-import Header from "../../components/Header/Header";
-import Text from "../../components/Text/Text";
-import Button from "../../components/Button/Button";
+import TelegramHeader from "../../components/Header/TelegramHeader";
+import TelegramText from "../../components/Text/TelegramText";
+import TelegramButton from "../../components/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import './ButtonsScreen.css';
 
 const ButtonsScreen = () => {
-    const { onClose, onToggleMainButton } = useTelegram()
+    const {webApp} = useTelegram()
+
+    const onToggleMainButton = () => {
+        if (!webApp.MainButton.isVisible) {
+            webApp.MainButton.show()
+        } else {
+            webApp.MainButton.hide()
+        }
+    }
+
+    const onToggleBackButton = () => {
+        if (!webApp.BackButton.isVisible) {
+            webApp.BackButton.show()
+        } else {
+            webApp.BackButton.hide()
+        }
+    }
+
+    const onClose = () => {
+        webApp.exit()
+    }
+
     return (
         <div className={'buttonsScreen'}>
-            <Header>
-                <Text>Buttons Screen</Text>
-            </Header>
+            <TelegramHeader>
+                <TelegramText>Buttons Screen</TelegramText>
+            </TelegramHeader>
 
-            <Button onClick={onToggleMainButton}>Toggle Menu Button</Button>
-            <Button onClick={onClose}>Exit</Button>
+            <TelegramButton onClick={onToggleMainButton}>Toggle Menu Button</TelegramButton>
+            <TelegramButton onClick={onToggleBackButton}>Toggle Back Button</TelegramButton>
+            <TelegramButton onClick={onClose}>Exit</TelegramButton>
         </div>
     );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import './Text.css';
+import './TelegramText.css';
 
-const Text = (props) => {
+const TelegramText = (props) => {
     return (
         <p {...props} className={'text ' + props.className}/>
     );
 };
 
-export default Text;
+export default TelegramText;

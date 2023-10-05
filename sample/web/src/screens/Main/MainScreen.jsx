@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from "../../components/Header/Header";
-import Text from "../../components/Text/Text";
-import Button from "../../components/Button/Button";
+import TelegramHeader from "../../components/Header/TelegramHeader";
+import TelegramText from "../../components/Text/TelegramText";
+import TelegramButton from "../../components/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
-import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS} from "../Global/Paths";
+import {PATH_BUTTONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS} from "../../constants/Paths";
 import './MainScreen.css';
 
 const Main = () => {
@@ -13,17 +13,17 @@ const Main = () => {
 
     return (
         <div className={'mainScreen'}>
-            <Header>
-                <Text>Main Screen</Text>
-            </Header>
+            <TelegramHeader>
+                <TelegramText>Main Screen</TelegramText>
+            </TelegramHeader>
 
-            <Text>Welcome {user?.username}!</Text>
+            <TelegramText>Welcome {user?.username}!</TelegramText>
 
-            <Text>Navigate to a screen:</Text>
-            <Button onClick={() => navigate(PATH_DATA)}>Data</Button>
-            <Button onClick={() => navigate(PATH_BUTTONS)}>Buttons</Button>
-            <Button onClick={() => navigate(PATH_EVENTS)}>Events</Button>
-            <Button onClick={() => navigate(PATH_INPUTS)}>Inputs</Button>
+            <TelegramText>Navigate to a screen:</TelegramText>
+            <TelegramButton onClick={() => navigate(PATH_DATA)}>Data</TelegramButton>
+            <TelegramButton onClick={() => navigate(PATH_BUTTONS)}>Buttons</TelegramButton>
+            <TelegramButton onClick={() => navigate(PATH_EVENTS)}>Events</TelegramButton>
+            <TelegramButton onClick={() => navigate(PATH_INPUTS)}>Inputs</TelegramButton>
         </div>
     );
 };

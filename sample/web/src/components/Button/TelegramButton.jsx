@@ -1,10 +1,10 @@
 import React from 'react';
-import './Button.css';
+import './TelegramButton.css';
 
-const Button = (props) => {
+const TelegramButton = (props) => {
     return (
         <button {...props} className={'button ' + props.className}/>
     );
 };
 
-export default Button;
+export default TelegramButton;
