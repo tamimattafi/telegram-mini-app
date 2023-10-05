@@ -17,9 +17,9 @@ const Main = () => {
                 <TelegramText className={'telegramTitle'}>Main Screen</TelegramText>
             </TelegramHeader>
 
-            <TelegramText>Welcome {user?.username}!</TelegramText>
+            <TelegramText>Welcome {user?.displayName}!</TelegramText>
 
-            <TelegramText>Navigate to a screen:</TelegramText>
+            <TelegramText className={'telegramSubtitle'}>Navigate to a screen:</TelegramText>
             <TelegramButton onClick={() => navigate(PATH_DATA)}>Data</TelegramButton>
             <TelegramButton onClick={() => navigate(PATH_BUTTONS)}>Buttons</TelegramButton>
             <TelegramButton onClick={() => navigate(PATH_EVENTS)}>Events</TelegramButton>

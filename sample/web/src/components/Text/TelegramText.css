@@ -1,7 +1,6 @@
 .telegramText {
     color: var(--tg-theme-text-color);
-    padding: 8px;
-    margin: 6px;
+    margin: 8px;
 }
 
 .telegramTitle {
@@ -9,4 +8,9 @@
     font-size: 22px;
     text-align: center;
     align-self: center;
+}
+
+.telegramSubtitle {
+    font-weight: normal;
+    font-size: 16px;
 }

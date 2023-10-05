@@ -7,16 +7,20 @@ import {MAIN_BUTTON_CLICK_EVENT} from "../../constants/TelegramEvents";
 
 const EventsScreen = () => {
     const {webApp} = useTelegram()
+    const mainButtonEnabledColor = "#00e18b"
+    const mainButtonDisabledColor = "#bdbdbd"
 
     // This callback handles clicks on the main button
     const mainButtonCallback = useCallback(async () => {
         // Show a progress bar on the main button while disabled
         webApp.MainButton.showProgress(false)
+        webApp.MainButton.color = mainButtonDisabledColor
 
         // Wait for 3 seconds
         setTimeout(() => {
             // Hide progress bar and enable the main button
             webApp.MainButton.hideProgress()
+            webApp.MainButton.color = mainButtonEnabledColor
 
             // Show a dialog screen with some text
             webApp.showAlert("Loading Finished")
@@ -61,8 +65,7 @@ const EventsScreen = () => {
     useEffect(() => {
         // Set some data to the main button
         webApp.MainButton.text = "Start Loading"
-        webApp.MainButton.color = "#e10087"
-        webApp.MainButton.textColor = "#ffffff"
+        webApp.MainButton.color = mainButtonEnabledColor
 
         // Show system buttons
         webApp.MainButton.show()
@@ -73,7 +76,7 @@ const EventsScreen = () => {
     return (
         <div className={'eventsScreen'}>
             <TelegramHeader>
-                <TelegramText>Events Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Events Screen</TelegramText>
             </TelegramHeader>
         </div>
     );

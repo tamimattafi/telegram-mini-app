@@ -31,8 +31,9 @@ const ButtonsScreen = () => {
     return (
         <div className={'buttonsScreen'}>
             <TelegramHeader>
-                <TelegramText>Buttons Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Buttons Screen</TelegramText>
             </TelegramHeader>
+
 
             <TelegramButton onClick={onToggleMainButton}>Toggle Menu Button</TelegramButton>
             <TelegramButton onClick={onToggleBackButton}>Toggle Back Button</TelegramButton>
