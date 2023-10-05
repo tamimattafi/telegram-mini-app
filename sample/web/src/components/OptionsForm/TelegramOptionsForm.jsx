@@ -1,18 +1,24 @@
 import React, {useState} from 'react';
 import TelegramInput from "../Input/TelegramInput";
 import TelegramButton from "../Button/TelegramButton";
-import './TelegramMiniForm.css';
+import './TelegramOptionsForm.css';
 import TelegramText from "../Text/TelegramText";
+import TelegramSelect from "../Select/TelegramSelect";
 
-const TelegramMiniForm = (props) => {
+const TelegramOptionsForm = (props) => {
     const [input, setInput] = useState('')
+    const [option, setOption] = useState([props.options[0]])
 
     const onChangeInput = (e) => {
         setInput(e.target.value)
     }
 
+    const onChangeOption = (e) => {
+        setOption(e.target.value)
+    }
+
     const onButtonClick = () => {
-        props.onSubmit(input)
+        props.onSubmit(input, option)
     }
 
     return (
@@ -26,6 +32,14 @@ const TelegramMiniForm = (props) => {
                 onChange={onChangeInput}
             />
 
+            <TelegramText className={'telegramSubtitle'}>{props.optionsLabel}</TelegramText>
+
+            <TelegramSelect
+                value={option}
+                onChange={onChangeOption}
+                elements={props.options}
+            />
+
             <TelegramText className={'telegramHint'}>{props.fieldDescription}</TelegramText>
 
             <TelegramButton onClick={onButtonClick}>{props.buttonLabel}</TelegramButton>
@@ -33,4 +47,4 @@ const TelegramMiniForm = (props) => {
     );
 };
 
-export default TelegramMiniForm;
+export default TelegramOptionsForm;

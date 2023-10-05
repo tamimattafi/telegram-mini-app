@@ -1,0 +1,11 @@
+.telegramSelect {
+    padding: 12px;
+    margin: 8px;
+    background: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    border: none;
+    outline: none;
+    cursor: text;
+    font-size: 16px;
+    border-radius: 8px;
+}
