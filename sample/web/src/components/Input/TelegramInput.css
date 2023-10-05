@@ -1,5 +1,5 @@
 .telegramInput {
-    padding: 8px;
+    padding: 10px;
     margin: 6px;
     background: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-text-color);

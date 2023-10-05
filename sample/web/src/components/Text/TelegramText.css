@@ -3,3 +3,10 @@
     padding: 8px;
     margin: 6px;
 }
+
+.telegramTitle {
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    align-self: center;
+}

@@ -22,7 +22,7 @@ const InputsScreen = () => {
     return (
         <div className={'inputsScreen'}>
             <TelegramHeader>
-                <TelegramText>Inputs Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Inputs Screen</TelegramText>
             </TelegramHeader>
 
             <TelegramInput

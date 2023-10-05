@@ -14,7 +14,7 @@ const Main = () => {
     return (
         <div className={'mainScreen'}>
             <TelegramHeader>
-                <TelegramText>Main Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Main Screen</TelegramText>
             </TelegramHeader>
 
             <TelegramText>Welcome {user?.username}!</TelegramText>
