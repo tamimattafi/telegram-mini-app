@@ -1,9 +1,14 @@
 .telegramButton {
-    padding: 20px 20px;
-    margin: 20px 20px;
+    padding: 12px 12px;
+    margin: 12px 6px;
     background: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
     border: none;
     outline: none;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 12px;
 }

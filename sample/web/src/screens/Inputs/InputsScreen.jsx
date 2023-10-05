@@ -4,8 +4,10 @@ import TelegramText from "../../components/Text/TelegramText";
 import './InputsScreen.css';
 import TelegramInput from "../../components/Input/TelegramInput";
 import TelegramButton from "../../components/Button/TelegramButton";
+import {useTelegram} from "../../hooks/useTelegram";
 
 const InputsScreen = () => {
+    const {webApp} = useTelegram()
     const [input, setInput] = useState('')
 
     const onChangeInput = (e) => {
@@ -14,6 +16,7 @@ const InputsScreen = () => {
 
     const onSend = () => {
 
+        webApp.close()
     }
 
     return (

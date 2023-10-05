@@ -61,7 +61,7 @@ const EventsScreen = () => {
     useEffect(() => {
         // Set some data to the main button
         webApp.MainButton.text = "Start Loading"
-        webApp.MainButton.color = "#009405"
+        webApp.MainButton.color = "#e10087"
         webApp.MainButton.textColor = "#ffffff"
 
         // Show system buttons
