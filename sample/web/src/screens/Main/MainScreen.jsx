@@ -22,22 +22,22 @@ const Main = () => {
             <TelegramText className={'telegramSubtitle'}>Navigate to a screen:</TelegramText>
 
             <TelegramButton onClick={() => navigate(PATH_DATA)}>Data Screen</TelegramButton>
-            <TelegramText className={'telegramDescription'}>
-                Check the data transmitted by telegram or bot api to the mini app
+            <TelegramText className={'telegramHint'}>
+                Check the data transmitted by telegram or bot api to the mini app like initDataUnsafe, themeParams and more
             </TelegramText>
 
             <TelegramButton onClick={() => navigate(PATH_FUNCTIONS)}>Functions Screen</TelegramButton>
-            <TelegramText className={'telegramDescription'}>
-                Trigger different functions and api calls on the mini app
+            <TelegramText className={'telegramHint'}>
+                Trigger different functions and api calls on the mini app like toggling system buttons, triggering events and more
             </TelegramText>
 
             <TelegramButton onClick={() => navigate(PATH_INPUTS)}>Inputs Screen</TelegramButton>
-            <TelegramText className={'telegramDescription'}>
-                Trigger different functions and api calls that require an input
+            <TelegramText className={'telegramHint'}>
+                Trigger different functions and api calls that require an input like setHeaderColor, setBackgroundColor and more
             </TelegramText>
 
             <TelegramButton onClick={() => navigate(PATH_EVENTS)}>Events Screen</TelegramButton>
-            <TelegramText className={'telegramDescription'}>
+            <TelegramText className={'telegramHint'}>
                 Listen to some events sent by telegram or bot to the mini app
             </TelegramText>
         </div>

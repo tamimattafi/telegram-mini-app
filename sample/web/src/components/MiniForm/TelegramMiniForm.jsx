@@ -26,7 +26,7 @@ const TelegramMiniForm = ({buttonLabel, fieldLabel, fieldDescription, onSubmit})
                 onChange={onChangeInput}
             />
 
-            <TelegramText className={'telegramDescription'}>{fieldDescription}</TelegramText>
+            <TelegramText className={'telegramHint'}>{fieldDescription}</TelegramText>
 
             <TelegramButton onClick={onButtonClick}>{buttonLabel}</TelegramButton>
         </div>

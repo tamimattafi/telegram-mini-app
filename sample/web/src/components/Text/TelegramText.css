@@ -15,7 +15,8 @@
     font-size: 16px;
 }
 
-.telegramDescription {
+.telegramHint {
+    font-size: 14px;
+    color: var(--tg-theme-hint-color);
     font-weight: normal;
-    font-size: 12px;
 }
