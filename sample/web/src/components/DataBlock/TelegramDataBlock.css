@@ -1,0 +1,9 @@
+.telegramDataBlock {
+    width: 100%;
+    padding: 12px;
+    background: var(--tg-theme-secondary-bg-color);
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
