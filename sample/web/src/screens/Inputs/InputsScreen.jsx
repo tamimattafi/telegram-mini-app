@@ -15,6 +15,11 @@ const InputsScreen = () => {
         webApp.showAlert(`${functionName}(${argument}) returned result(${result})`)
     }
 
+    const onReceivedEvent = (event, data) => {
+        // Show function call result using an alert
+        webApp.showAlert(`received event(${event}) with data(${data})`)
+    }
+
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onIsVersionAtLeast = (version) => {
         const result = webApp.isVersionAtLeast(version)
@@ -34,13 +39,13 @@ const InputsScreen = () => {
     let registeredEvent = ''
     // This callback handles clicks on the main button
     const onEvent = useCallback(async (data) => {
-        onResult('onEventReceived', registeredEvent, JSON.stringify(data))
+        onReceivedEvent(registeredEvent, JSON.stringify(data))
     }, [registeredEvent]);
 
     const onOnEvent = (event) => {
         webApp.offEvent(registeredEvent, onEvent)
-        const result = webApp.onEvent(event, onEvent)
         registeredEvent = event
+        const result = webApp.onEvent(event, onEvent)
         onResult('onEvent', event, result)
     }
 
@@ -49,15 +54,34 @@ const InputsScreen = () => {
         onResult('offEvent', registeredEvent, result)
     }
 
+    const onSendData = (data) => {
+        const result = webApp.sendData(data)
+        onResult('sendData', data, result)
+    }
+
     const onSwitchInlineQuery = (query, options) => {
         const result = webApp.switchInlineQuery(query, options)
         onResult('switchInlineQuery', `${query}, ${options}`, result)
     }
 
+    const onOpenLink = (link, options) => {
+        const json = JSON.parse(options)
+        const result = webApp.openLink(link, json)
+        onResult('openLink', `${link}, ${options}`, result)
+    }
 
-    const onSendData = (data) => {
-        const result = webApp.sendData(data)
-        onResult('sendData', data, result)
+    const onOpenTelegramLink = (link) => {
+        const result = webApp.openTelegramLink(link)
+        onResult('openTelegramLink', link, result)
+    }
+
+    const invoiceCallback = useCallback(async (data) => {
+        onReceivedEvent('openInvoiceEvent', data)
+    }, []);
+
+    const onOpenInvoice = (link) => {
+        const result = webApp.openInvoice(link, invoiceCallback)
+        onResult('openInvoice', link, result)
     }
 
     return (
@@ -134,6 +158,41 @@ const InputsScreen = () => {
                 options={['users', 'bots', 'groups', 'channels']}
                 buttonlabel={'Execute'}
                 onSubmit={onSwitchInlineQuery}
+            />
+
+            <TelegramOptionsForm
+                fieldlabel={'openLink'}
+                fielddescription={
+                    'A method that opens a link in an external browser. The Mini App will not be closed.\n' +
+                    'Bot API 6.4+ If the optional options parameter is passed with the field try_instant_view=true, the link will be opened in Instant View mode if possible.\n' +
+                    '\n' +
+                    'Note that this method can be called only in response to user interaction with the Mini App interface (e.g. a click inside the Mini App or on the main button)'
+                }
+                fieldhint={`Enter a valid url, e.g https://www.google.com`}
+                optionslabel={'options'}
+                options={[ '{ "try_instant_view": true }']}
+                buttonlabel={'Execute'}
+                onSubmit={onOpenLink}
+            />
+
+            <TelegramMiniForm
+                fieldlabel={'openTelegramLink'}
+                fielddescription={
+                    'A method that opens a telegram link inside Telegram app. The Mini App will be closed.'
+                }
+                fieldhint={`Enter a valid url, e.g https://t.me/mini_app_sample_bot`}
+                buttonlabel={'Execute'}
+                onSubmit={onOpenTelegramLink}
+            />
+
+            <TelegramMiniForm
+                fieldlabel={'openInvoice'}
+                fielddescription={
+                    'Bot API 6.1+ A method that opens an invoice using the link url. The Mini App will receive the event invoiceClosed when the invoice is closed. If an optional callback parameter was passed, the callback function will be called and the invoice status will be passed as the first argument.'
+                }
+                fieldhint={`Enter a valid invoice url`}
+                buttonlabel={'Execute'}
+                onSubmit={onOpenInvoice}
             />
         </div>
     );
