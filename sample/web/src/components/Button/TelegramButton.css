@@ -1,6 +1,6 @@
 .telegramButton {
-    padding: 4px 4px;
-    margin: 4px 4px;
+    padding: 8px;
+    margin: 6px;
     background: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
     border: none;
@@ -9,6 +9,6 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 6px;
 }
