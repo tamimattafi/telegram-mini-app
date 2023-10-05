@@ -7,10 +7,12 @@ import {COLOR_SCHEME_DARK} from "../../constants/TelegramConstants";
 
 const TelegramJson = (props) => {
     const { webApp } = useTelegram()
+
+    // Check whether the used color scheme is dark or light, to use the needed style for json viewer
     const isDarkColorScheme = webApp.colorScheme === COLOR_SCHEME_DARK
 
     return (
-        <JsonView {...props} dark={isDarkColorScheme} theme={'github'}/>
+        <JsonView {...props} dark={isDarkColorScheme} theme={'vscode'}/>
     );
 };
 
