@@ -3,7 +3,7 @@ import './TelegramDataBlock.css';
 
 const TelegramDataBlock = (props) => {
     return (
-        <div {...props} className={'dataBlock ' + props.className}/>
+        <div {...props} className={'telegramDataBlock ' + props.className}/>
     );
 };
 
