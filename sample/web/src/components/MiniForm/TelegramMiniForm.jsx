@@ -17,18 +17,17 @@ const TelegramMiniForm = (props) => {
 
     return (
         <div {...props} className={'telegramMiniForm ' + props.className}>
-            <TelegramText className={'telegramSubtitle'}>{props.fieldLabel}</TelegramText>
+            <TelegramText className={'telegramSubtitle'}>{props.fieldlabel}</TelegramText>
+            <TelegramText className={'telegramHint'}>{props.fielddescription}</TelegramText>
 
             <TelegramInput
                 type="text"
-                placeholder={props.fieldHint}
+                placeholder={props.fieldhint}
                 value={input}
                 onChange={onChangeInput}
             />
 
-            <TelegramText className={'telegramHint'}>{props.fieldDescription}</TelegramText>
-
-            <TelegramButton onClick={onButtonClick}>{props.buttonLabel}</TelegramButton>
+            <TelegramButton onClick={onButtonClick}>{props.buttonlabel}</TelegramButton>
         </div>
     );
 };

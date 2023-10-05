@@ -7,42 +7,43 @@ import TelegramSelect from "../Select/TelegramSelect";
 
 const TelegramOptionsForm = (props) => {
     const [input, setInput] = useState('')
-    const [option, setOption] = useState([props.options[0]])
+    const [options, setOptions] = useState([props.options[0]])
 
     const onChangeInput = (e) => {
         setInput(e.target.value)
     }
 
     const onChangeOption = (e) => {
-        setOption(e.target.value)
+        const options = Array.from(e.target.selectedOptions, option => option.value);
+        setOptions(options)
     }
 
     const onButtonClick = () => {
-        props.onSubmit(input, option)
+        props.onSubmit(input, options)
     }
 
     return (
         <div {...props} className={'telegramMiniForm ' + props.className}>
-            <TelegramText className={'telegramSubtitle'}>{props.fieldLabel}</TelegramText>
+            <TelegramText className={'telegramSubtitle'}>{props.fieldlabel}</TelegramText>
+            <TelegramText className={'telegramHint'}>{props.fielddescription}</TelegramText>
 
             <TelegramInput
                 type="text"
-                placeholder={props.fieldHint}
+                placeholder={props.fieldhint}
                 value={input}
                 onChange={onChangeInput}
             />
 
-            <TelegramText className={'telegramSubtitle'}>{props.optionsLabel}</TelegramText>
+            <TelegramText className={'telegramSubtitle'}>{props.optionslabel}</TelegramText>
 
             <TelegramSelect
-                value={option}
+                value={options}
+                multiple={true}
                 onChange={onChangeOption}
                 elements={props.options}
             />
 
-            <TelegramText className={'telegramHint'}>{props.fieldDescription}</TelegramText>
-
-            <TelegramButton onClick={onButtonClick}>{props.buttonLabel}</TelegramButton>
+            <TelegramButton onClick={onButtonClick}>{props.buttonlabel}</TelegramButton>
         </div>
     );
 };
