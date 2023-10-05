@@ -6,7 +6,9 @@ import './TelegramJson.css';
 
 const TelegramJson = (props) => {
     return (
-        <JsonView {...props} className={'telegramJson ' + props.className} />
+        <div className={'telegramJson'}>
+            <JsonView {...props}/>
+        </div>
     );
 };
 

@@ -14,7 +14,7 @@ const DataScreen = () => {
             </TelegramHeader>
 
             <TelegramText className={'telegramSubtitle'}>initDataUnsafe:</TelegramText>
-            <TelegramJson src={webApp.initDataUnsafe} dark={true}/>
+            <TelegramJson src={webApp.initDataUnsafe} dark={true} theme={'atom'}/>
         </div>
     );
 };
