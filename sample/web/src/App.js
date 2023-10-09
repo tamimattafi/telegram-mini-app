@@ -26,6 +26,7 @@ import LinkFunctionsScreen from "./screens/functions/links/LinkFunctionsScreen";
 import ThemeFunctionsScreen from "./screens/functions/theme/ThemeFunctionsScreen";
 import QrFunctionsScreen from "./screens/functions/qr/QrFunctionsScreen";
 import MainButtonScreen from "./screens/buttons/main/MainButtonScreen";
+import BackButtonScreen from "./screens/buttons/main/BackButtonScreen";
 
 function App() {
     const {webApp} = useTelegram()
@@ -64,7 +65,7 @@ function App() {
                 <Route path={PATH_FUNCTIONS_THEME} element={<ThemeFunctionsScreen/>}/>
                 <Route path={PATH_FUNCTIONS_QR} element={<QrFunctionsScreen/>}/>
                 <Route path={PATH_BUTTONS_MAIN} element={<MainButtonScreen/>}/>
-                <Route path={PATH_BUTTONS_BACK} element={<MainButtonScreen/>}/>
+                <Route path={PATH_BUTTONS_BACK} element={<BackButtonScreen/>}/>
             </Routes>
         </div>
     );
