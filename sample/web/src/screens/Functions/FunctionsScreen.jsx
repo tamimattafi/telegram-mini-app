@@ -11,27 +11,45 @@ const FunctionsScreen = () => {
 
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onReady = () => {
-        executeMethod('ready', webApp.ready)
+        executeMethod(
+            'ready',
+            webApp.ready
+        )
     }
 
     const onExpand = () => {
-        executeMethod('expand', webApp.expand)
+        executeMethod(
+            'expand',
+            webApp.expand
+        )
     }
 
     const onClose = () => {
-        executeMethod('close', webApp.close)
+        executeMethod(
+            'close',
+            webApp.close
+        )
     }
 
     const onEnableClosingConfirmation = () => {
-        executeMethod('enableClosingConfirmation', webApp.enableClosingConfirmation)
+        executeMethod(
+            'enableClosingConfirmation',
+            webApp.enableClosingConfirmation
+        )
     }
 
     const onDisableClosingConfirmation = () => {
-        executeMethod('disableClosingConfirmation', webApp.disableClosingConfirmation)
+        executeMethod(
+            'disableClosingConfirmation',
+            webApp.disableClosingConfirmation
+        )
     }
 
     const onCloseScanQrPopup = () => {
-        executeMethod('closeScanQrPopup', webApp.closeScanQrPopup)
+        executeMethod(
+            'closeScanQrPopup',
+            webApp.closeScanQrPopup
+        )
     }
 
     const readTextFromClipboardCallback = useCallback(async (data) => {
@@ -39,9 +57,10 @@ const FunctionsScreen = () => {
     }, [onReceivedEvent]);
 
     const onReadTextFromClipboard = () => {
-        executeMethod('readTextFromClipboard', () => {
-            webApp.readTextFromClipboard(readTextFromClipboardCallback)
-        })
+        executeMethod(
+            'readTextFromClipboard',
+            () => webApp.readTextFromClipboard(readTextFromClipboardCallback)
+        )
     }
 
     const requestWriteAccessCallback = useCallback(async (data) => {
@@ -49,9 +68,10 @@ const FunctionsScreen = () => {
     }, [onReceivedEvent]);
 
     const onRequestWriteAccess = () => {
-        executeMethod('requestWriteAccess', () => {
-            webApp.requestWriteAccess(requestWriteAccessCallback)
-        })
+        executeMethod(
+            'requestWriteAccess',
+            () => webApp.requestWriteAccess(requestWriteAccessCallback)
+        )
     }
 
     const requestContactCallback = useCallback(async (data) => {
@@ -59,9 +79,10 @@ const FunctionsScreen = () => {
     }, [onReceivedEvent]);
 
     const onRequestContact = () => {
-        executeMethod('requestContact', () => {
-            webApp.requestContact(requestContactCallback)
-        })
+        executeMethod(
+            'requestContact',
+            () => webApp.requestContact(requestContactCallback)
+        )
     }
 
     return (
