@@ -9,7 +9,7 @@ const TelegramMiniForm = (props) => {
         <div {...props} className={'telegramDetailedButton ' + props.className}>
             <TelegramText className={'telegramSubtitle'}>{props.buttontitle}</TelegramText>
             <TelegramText className={'telegramHint'}>{props.buttondescription}</TelegramText>
-            <TelegramButton onClick={props.onClick}>{props.buttonlabel}</TelegramButton>
+            <TelegramButton onClick={props.onButtomClick}>{props.buttonlabel}</TelegramButton>
         </div>
     );
 };
