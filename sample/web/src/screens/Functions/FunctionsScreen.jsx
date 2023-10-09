@@ -2,36 +2,26 @@ import React from 'react';
 import TelegramHeader from "../../components/kit/Header/TelegramHeader";
 import TelegramText from "../../components/kit/Text/TelegramText";
 import './FunctionsScreen.css';
-import ReadyFunction from "../../components/app/functions/ReadyFunction";
-import ExpandFunction from "../../components/app/functions/ExpandFunction";
-import EnableClosingConfirmationFunction from "../../components/app/functions/EnableClosingConfirmationFunction";
-import DisableClosingConfirmationFunction from "../../components/app/functions/DisableClosingConfirmationFunction";
-import CloseScanQRPopupFunction from "../../components/app/functions/CloseScanQRPopupFunction";
-import ReadTextFromClipboardFunction from "../../components/app/functions/ReadTextFromClipboardFunction";
-import RequestWriteAccessFunction from "../../components/app/functions/RequestWriteAccessFunction";
-import RequestContactFunction from "../../components/app/functions/RequestContactFunction";
-import CloseFunction from "../../components/app/functions/CloseFunction";
+import {useTelegram} from "../../hooks/useTelegram";
+import TelegramLink from "../../components/kit/Link/TelegramLink";
 
 
 const FunctionsScreen = () => {
+    const {webApp} = useTelegram()
+
     return (
         <div className={'functionsScreen'}>
             <TelegramHeader>
                 <TelegramText className={'telegramTitle'}>Functions Screen</TelegramText>
             </TelegramHeader>
 
-            <ReadyFunction />
-            <ExpandFunction />
-            <CloseFunction />
+            <TelegramText className={'telegramText'}>
+                The version of the Bot API available in the user's Telegram app: {webApp.version}
+            </TelegramText>
 
-            <EnableClosingConfirmationFunction />
-            <DisableClosingConfirmationFunction />
-
-            <CloseScanQRPopupFunction />
-            <ReadTextFromClipboardFunction />
-
-            <RequestWriteAccessFunction />
-            <RequestContactFunction/>
+            <TelegramText className={'telegramText'}>
+                Please check the docs for more information about the <TelegramLink href="https://core.telegram.org/bots/webapps#initializing-mini-apps">Functions List</TelegramLink>
+            </TelegramText>
         </div>
     );
 };

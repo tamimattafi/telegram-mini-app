@@ -9,7 +9,6 @@ import TelegramDetailedButton from "../../kit/DetailedButton/TelegramDetailedBut
  * refer to the value of the Telegram.WebApp.isExpanded parameter.
  *
  * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
- *
  */
 const ExpandFunction = () => {
     const {webApp, executeMethod} = useTelegram()

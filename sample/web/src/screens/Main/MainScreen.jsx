@@ -4,7 +4,7 @@ import TelegramText from "../../components/kit/Text/TelegramText";
 import TelegramButton from "../../components/kit/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
-import {PATH_FUNCTIONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS} from "../../constants/Paths";
+import {PATH_FUNCTIONS, PATH_DATA, PATH_EVENTS} from "../../constants/Paths";
 import './MainScreen.css';
 
 const Main = () => {
@@ -29,11 +29,6 @@ const Main = () => {
             <TelegramButton onClick={() => navigate(PATH_FUNCTIONS)}>Functions Screen</TelegramButton>
             <TelegramText className={'telegramHint'}>
                 Trigger different functions and api calls on the mini app like toggling system buttons, triggering events and more
-            </TelegramText>
-
-            <TelegramButton onClick={() => navigate(PATH_INPUTS)}>Input Functions Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Trigger different functions and api calls that require an input like setHeaderColor, setBackgroundColor and more
             </TelegramText>
 
             <TelegramButton onClick={() => navigate(PATH_EVENTS)}>Events Screen</TelegramButton>

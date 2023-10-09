@@ -13,7 +13,7 @@ import TelegramDetailedButton from "../../kit/DetailedButton/TelegramDetailedBut
  *
  * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
  */
-const CloseScanQRPopupFunction = () => {
+const CloseScanQrPopupFunction = () => {
     const {webApp, executeMethod} = useTelegram()
 
     const onCloseScanQrPopup = () => {
@@ -32,4 +32,4 @@ const CloseScanQRPopupFunction = () => {
     );
 };
 
-export default CloseScanQRPopupFunction;
+export default CloseScanQrPopupFunction;

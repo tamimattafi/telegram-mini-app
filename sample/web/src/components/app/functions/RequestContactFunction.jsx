@@ -3,6 +3,16 @@ import {useTelegram} from "../../../hooks/useTelegram";
 import TelegramDetailedButton from "../../kit/DetailedButton/TelegramDetailedButton";
 
 
+/**
+ * Since Bot API 6.9+
+ *
+ * requestContact([callback]) is method that shows a native popup prompting the user for their phone number.
+ *
+ * If an optional callback parameter was passed, the callback function will be called when the popup is closed and the
+ * first argument will be a boolean indicating whether the user shared its phone number.
+ *
+ * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
+ */
 const RequestContactFunction = () => {
     const {webApp, onReceivedEvent, executeMethod} = useTelegram()
 
