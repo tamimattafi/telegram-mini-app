@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes} from "react-router-dom";
 import Main from "./screens/Main/MainScreen";
-import FunctionsScreen from "./screens/Buttons/FunctionsScreen";
+import FunctionsScreen from "./screens/Functions/FunctionsScreen";
 import DataScreen from "./screens/Data/DataScreen";
 import EventsScreen from "./screens/Events/EventsScreen";
 import InputsScreen from "./screens/Inputs/InputsScreen";

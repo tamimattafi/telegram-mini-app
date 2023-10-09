@@ -112,7 +112,7 @@ const InputsScreen = () => {
     return (
         <div className={'inputsScreen'}>
             <TelegramHeader>
-                <TelegramText className={'telegramTitle'}>Inputs Screen</TelegramText>
+                <TelegramText className={'telegramTitle'}>Input Functions Screen</TelegramText>
             </TelegramHeader>
 
             <TelegramText className={'telegramText'}>The version of the Bot API available in the user's Telegram app: {webApp.version}</TelegramText>
@@ -193,7 +193,7 @@ const InputsScreen = () => {
                     '\n' +
                     'Note that this method can be called only in response to user interaction with the Mini App interface (e.g. a click inside the Mini App or on the main button)'
                 }
-                fieldhint={`Enter a valid url, e.g https://www.google.com`}
+                fieldhint={`Enter a valid url with https://, e.g https://www.google.com`}
                 optionslabel={'options'}
                 options={[ '{ "try_instant_view": true }']}
                 buttonlabel={'Execute'}
@@ -223,7 +223,12 @@ const InputsScreen = () => {
             <TelegramMiniForm
                 fieldlabel={'showPopup'}
                 fielddescription={
-                    'Bot API 6.2+ A method that shows a native popup described by the params argument of the type PopupParams. The Mini App will receive the event popupClosed when the popup is closed. If an optional callback parameter was passed, the callback function will be called and the field id of the pressed button will be passed as the first argument.'
+                    'Bot API 6.2+ A method that shows a native popup described by the params argument of the type PopupParams. The Mini App will receive the event popupClosed when the popup is closed. If an optional callback parameter was passed, the callback function will be called and the field id of the pressed button will be passed as the first argument.' +
+                    'Example: {\n' +
+                    '  "title":"This is pop up!",\n' +
+                    '  "message":"Yes!",\n' +
+                    '  "buttons": [{"type":"close"}]\n' +
+                    '}'
                 }
                 fieldhint={`Enter a valid PopupParams json`}
                 buttonlabel={'Execute'}

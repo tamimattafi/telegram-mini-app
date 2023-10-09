@@ -31,7 +31,7 @@ const Main = () => {
                 Trigger different functions and api calls on the mini app like toggling system buttons, triggering events and more
             </TelegramText>
 
-            <TelegramButton onClick={() => navigate(PATH_INPUTS)}>Inputs Screen</TelegramButton>
+            <TelegramButton onClick={() => navigate(PATH_INPUTS)}>Input Functions Screen</TelegramButton>
             <TelegramText className={'telegramHint'}>
                 Trigger different functions and api calls that require an input like setHeaderColor, setBackgroundColor and more
             </TelegramText>
