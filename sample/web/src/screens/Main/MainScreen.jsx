@@ -1,7 +1,7 @@
 import React from 'react';
-import TelegramHeader from "../../components/Header/TelegramHeader";
-import TelegramText from "../../components/Text/TelegramText";
-import TelegramButton from "../../components/Button/TelegramButton";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
+import TelegramButton from "../../components/kit/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
 import {PATH_FUNCTIONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS} from "../../constants/Paths";

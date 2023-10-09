@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect} from 'react';
-import TelegramHeader from "../../components/Header/TelegramHeader";
-import TelegramText from "../../components/Text/TelegramText";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
 import './EventsScreen.css';
 import {useTelegram} from "../../hooks/useTelegram";
 import {MAIN_BUTTON_CLICK_EVENT} from "../../constants/TelegramEvents";

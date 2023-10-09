@@ -1,10 +1,10 @@
 import React from 'react';
-import TelegramHeader from "../../components/Header/TelegramHeader";
-import TelegramText from "../../components/Text/TelegramText";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
 import {useTelegram} from "../../hooks/useTelegram";
 import './DataScreen.css';
-import TelegramDataBlock from "../../components/DataBlock/TelegramDataBlock";
-import TelegramJson from "../../components/Json/TelegramJson";
+import TelegramDataBlock from "../../components/kit/DataBlock/TelegramDataBlock";
+import TelegramJson from "../../components/kit/Json/TelegramJson";
 
 const DataScreen = () => {
     const { webApp } = useTelegram()

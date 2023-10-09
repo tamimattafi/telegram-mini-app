@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react';
-import TelegramHeader from "../../components/Header/TelegramHeader";
-import TelegramText from "../../components/Text/TelegramText";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
 import './InputFunctionsScreen.css';
 import {useTelegram} from "../../hooks/useTelegram";
-import TelegramMiniForm from "../../components/MiniForm/TelegramMiniForm";
-import TelegramOptionsForm from "../../components/OptionsForm/TelegramOptionsForm";
-import TelegramButton from "../../components/Button/TelegramButton";
+import TelegramMiniForm from "../../components/kit/MiniForm/TelegramMiniForm";
+import TelegramOptionsForm from "../../components/kit/OptionsForm/TelegramOptionsForm";
+import TelegramButton from "../../components/kit/Button/TelegramButton";
 
 const InputFunctionsScreen = () => {
     const {webApp, onReceivedEvent, executeArgumentMethod} = useTelegram()

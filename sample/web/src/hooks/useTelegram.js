@@ -21,18 +21,20 @@ export function useTelegram() {
     }
 
     // Call a method on webApp while handling errors
-    const executeArgumentMethod = (methodName, argument, method) => {
+    const executeArgumentMethod = (methodName, argument, method, ignoreAlert) => {
         try {
             const result = method()
-            const wrappedResult = `Result: ${result}`
-            onArgumentResult(methodName, argument, wrappedResult)
+            if (!ignoreAlert) {
+                const wrappedResult = `Result: ${result}`
+                onArgumentResult(methodName, argument, wrappedResult)
+            }
         } catch (error) {
             onArgumentResult(methodName, argument, error)
         }
     }
 
-    const executeMethod = (methodName, method) => {
-        executeArgumentMethod(methodName, '', method)
+    const executeMethod = (methodName, method, ignoreAlert) => {
+        executeArgumentMethod(methodName, '', method, ignoreAlert)
     }
 
     return {
