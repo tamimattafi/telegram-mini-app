@@ -24,65 +24,72 @@ const FunctionsScreen = () => {
             <BotAPIHeader />
 
             <TelegramDetailedButton
-                buttontitle={'Basic functions'}
+                buttontitle={'Basic Functions'}
                 buttondescription={
-                    'Try functions that interact with basic functionality of the Mini App, such as ready(), close() etc'
+                    'These functions are useful to control the lifecycle of the app, and interact with the layout of ' +
+                    'the MiniApp and Telegram App.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Basic functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_BASIC)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'Alert functions'}
+                buttontitle={'Alert Functions'}
                 buttondescription={
-                    'Try functions that use popup functionality of the Mini App, such as showAlert(), showConfirm() etc'
+                    'These functions are useful to show popup messages, alerts and confirmation dialogs to the user ' +
+                    'to ask them to make a decision or inform them about an event.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Alert Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_ALERTS)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'Event functions'}
+                buttontitle={'Event Functions'}
                 buttondescription={
-                    'Try functions that interact with events of the Mini App, Bot and Telegram, such as onEvent()'
+                    'These functions are useful to track the state of the MiniApp, Bot or Telegram App. For example ' +
+                    'You can listen to main button clicks by tracking the mainButtonClicked event.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Event Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_EVENTS)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'Bot functions'}
+                buttontitle={'Bot Functions'}
                 buttondescription={
-                    'Try functions that interact with bot functionality of the Mini App, such as sendData()'
+                    'These functions are useful to interact with the bot, send data directly, or prompt users with ' +
+                    'predefined queries for different cases.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Bot Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_BOT)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'Theme functions'}
+                buttontitle={'Theme Functions'}
                 buttondescription={
-                    'Try functions that interact with theme and color scheme of the Mini App, such as setHeaderColor()'
+                    'These functions are useful to change the overall theme of the mini app to match your design. ' +
+                    'At the moment, you can change the color of the header and the background.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Theme Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_THEME)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'Link functions'}
+                buttontitle={'Link Functions'}
                 buttondescription={
-                    'Try functions that interact with links functionality of the Mini App, such as openLink()'
+                    'These functions are useful to navigate to external webpages, or even to internal user profiles ' +
+                    'chats, bots and other telegram support links. Also, you can open invoices.'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try Link Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_LINKS)}
             />
 
             <TelegramDetailedButton
-                buttontitle={'QR functions'}
+                buttontitle={'QR Functions'}
                 buttondescription={
-                    'Try functions that interact with QR functionality of the Mini App, such as showScanQrPopup()'
+                    'These functions are useful to interact with Qr codes and other barcode formats. Users can use ' +
+                    'the built in scanner of telegram to retrieve data without relying on external sources'
                 }
-                buttonlabel={'Try Now'}
+                buttonlabel={'Try QR Functions'}
                 onButtomClick={() => navigate(PATH_FUNCTIONS_QR)}
             />
         </TelegramScreen>
