@@ -7,79 +7,56 @@ import './FunctionsScreen.css';
 import TelegramDetailedButton from "../../components/DetailedButton/TelegramDetailedButton";
 
 const FunctionsScreen = () => {
-    const {webApp} = useTelegram()
-
-    const onResult = (functionName, result) => {
-        // Show function call result using an alert
-        webApp.showAlert(`${functionName}() returned result(${result})`)
-    }
-
-    const onReceivedEvent = (event, data) => {
-        // Show function call result using an alert
-        webApp.showAlert(`received event(${event}) with data(${data})`)
-    }
-
-    const executeMethod = (methodName, method) => {
-        try {
-            const result = method()
-            onResult(methodName, result)
-        } catch (error) {
-            const errorResult = `error_${error}`
-            onResult(methodName, errorResult)
-        }
-    }
+    const {webApp, onReceivedEvent, executeMethod} = useTelegram()
 
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onReady = () => {
-        const result = webApp.ready()
-        onResult('ready', result)
+        executeMethod('ready', webApp.ready)
     }
 
     const onExpand = () => {
-        const result = webApp.expand()
-        onResult('expand', result)
+        executeMethod('expand', webApp.expand)
     }
 
     const onClose = () => {
-        webApp.close()
+        executeMethod('close', webApp.close)
     }
 
     const onEnableClosingConfirmation = () => {
-        const result = webApp.enableClosingConfirmation()
-        onResult('enableClosingConfirmation', result)
+        executeMethod('enableClosingConfirmation', webApp.enableClosingConfirmation)
     }
 
     const onDisableClosingConfirmation = () => {
-        const result = webApp.disableClosingConfirmation()
-        onResult('disableClosingConfirmation', result)
+        executeMethod('disableClosingConfirmation', webApp.disableClosingConfirmation)
     }
 
     const onCloseScanQrPopup = () => {
-        const result = webApp.closeScanQrPopup()
-        onResult('closeScanQrPopup', result)
+        executeMethod('closeScanQrPopup', webApp.closeScanQrPopup)
     }
 
     const readTextFromClipboardCallback = useCallback(async (data) => {
         onReceivedEvent('readTextFromClipboard_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onReadTextFromClipboard = () => {
-        const result = webApp.readTextFromClipboard(readTextFromClipboardCallback)
-        onResult('readTextFromClipboard', result)
+        executeMethod('readTextFromClipboard', () => {
+            webApp.readTextFromClipboard(readTextFromClipboardCallback)
+        })
     }
 
     const requestWriteAccessCallback = useCallback(async (data) => {
         onReceivedEvent('requestWriteAccess_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onRequestWriteAccess = () => {
-        const result = webApp.requestWriteAccess(requestWriteAccessCallback)
-        onResult('requestWriteAccess', result)
+        executeMethod('requestWriteAccess', () => {
+            webApp.requestWriteAccess(requestWriteAccessCallback)
+        })
     }
 
     const requestContactCallback = useCallback(async (data) => {
         onReceivedEvent('requestContact_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onRequestContact = () => {
         executeMethod('requestContact', () => {

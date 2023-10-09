@@ -8,105 +8,112 @@ import TelegramOptionsForm from "../../components/OptionsForm/TelegramOptionsFor
 import TelegramButton from "../../components/Button/TelegramButton";
 
 const InputFunctionsScreen = () => {
-    const {webApp} = useTelegram()
-
-    const onResult = (functionName, argument, result) => {
-        // Show function call result using an alert
-        webApp.showAlert(`${functionName}(${argument}) returned result(${result})`)
-    }
-
-    const onReceivedEvent = (event, data) => {
-        // Show function call result using an alert
-        webApp.showAlert(`received event(${event}) with data(${data})`)
-    }
+    const {webApp, onReceivedEvent, executeArgumentMethod} = useTelegram()
 
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onIsVersionAtLeast = (version) => {
-        const result = webApp.isVersionAtLeast(version)
-        onResult('isVersionAtLeast', version, result)
+        executeArgumentMethod('isVersionAtLeast', version, () => {
+            webApp.isVersionAtLeast(version)
+        })
     }
 
     const onSetHeaderColor = (color) => {
-        const result = webApp.setHeaderColor(color)
-        onResult('setHeaderColor', color, result)
+        executeArgumentMethod('setHeaderColor', color, () => {
+            webApp.setHeaderColor(color)
+        })
     }
 
     const onSetBackgroundColor = (color) => {
-        const result = webApp.setBackgroundColor(color)
-        onResult('setBackgroundColor', color, result)
+        executeArgumentMethod('setBackgroundColor', color, () => {
+            webApp.setBackgroundColor(color)
+        })
     }
 
     let registeredEvent = ''
     // This callback handles clicks on the main button
     const onEvent = useCallback(async (data) => {
         onReceivedEvent(registeredEvent, JSON.stringify(data))
-    }, [registeredEvent]);
+    }, [registeredEvent, onReceivedEvent]);
 
     const onOnEvent = (event) => {
         webApp.offEvent(registeredEvent, onEvent)
         registeredEvent = event
-        const result = webApp.onEvent(event, onEvent)
-        onResult('onEvent', event, result)
+
+        executeArgumentMethod('onEvent', event, () => {
+            webApp.onEvent(event, onEvent)
+        })
     }
 
     const onOffEvent = () => {
-        const result = webApp.offEvent(registeredEvent, onEvent)
-        onResult('offEvent', registeredEvent, result)
+        executeArgumentMethod('offEvent', registeredEvent, () => {
+            webApp.offEvent(registeredEvent, onEvent)
+        })
     }
 
     const onSendData = (data) => {
-        const result = webApp.sendData(data)
-        onResult('sendData', data, result)
+        executeArgumentMethod('sendData', data, () => {
+            webApp.sendData(data)
+        })
     }
 
     const onSwitchInlineQuery = (query, options) => {
-        const result = webApp.switchInlineQuery(query, options)
-        onResult('switchInlineQuery', `${query}, ${options}`, result)
+        executeArgumentMethod('switchInlineQuery', `${query}, ${options}`, () => {
+            webApp.switchInlineQuery(query, options)
+        })
     }
 
     const onOpenLink = (link, options) => {
         const json = JSON.parse(options)
-        const result = webApp.openLink(link, json)
-        onResult('openLink', `${link}, ${options}`, result)
+        executeArgumentMethod('openLink', `${link}, ${options}`, () => {
+            webApp.openLink(link, json)
+        })
     }
 
     const onOpenTelegramLink = (link) => {
-        const result = webApp.openTelegramLink(link)
-        onResult('openTelegramLink', link, result)
+        executeArgumentMethod('openTelegramLink', link, () => {
+            webApp.openTelegramLink(link)
+        })
     }
 
     const invoiceCallback = useCallback(async (data) => {
         onReceivedEvent('openInvoice_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onOpenInvoice = (link) => {
-        const result = webApp.openInvoice(link, invoiceCallback)
-        onResult('openInvoice', link, result)
+        executeArgumentMethod('openInvoice', link, () => {
+            webApp.openInvoice(link, invoiceCallback)
+        })
     }
 
     const showPopupCallback = useCallback(async (data) => {
         onReceivedEvent('showPopup_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onShowPopup = (params) => {
         const json = JSON.parse(params)
-        webApp.showPopup(json, showPopupCallback)
+        executeArgumentMethod('showPopup', json, () => {
+            webApp.showPopup(json, showPopupCallback)
+        })
     }
 
     const showAlertCallback = useCallback(async (data) => {
         onReceivedEvent('showAlert_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onShowAlert = (message) => {
-        webApp.showAlert(message, showAlertCallback)
+        executeArgumentMethod('showAlert', message, () => {
+            webApp.showAlert(message, showAlertCallback)
+        })
     }
 
     const showConfirmCallback = useCallback(async (data) => {
         onReceivedEvent('showConfirm_Callback', data)
-    }, []);
+    }, [onReceivedEvent]);
 
     const onShowConfirm = (message) => {
-        webApp.showConfirm(message, showConfirmCallback)
+        executeArgumentMethod('showConfirm', message, () => {
+            webApp.showConfirm(message, showConfirmCallback)
+        })
     }
 
     return (
