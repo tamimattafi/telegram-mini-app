@@ -76,12 +76,37 @@ const InputsScreen = () => {
     }
 
     const invoiceCallback = useCallback(async (data) => {
-        onReceivedEvent('openInvoiceEvent', data)
+        onReceivedEvent('openInvoice_Callback', data)
     }, []);
 
     const onOpenInvoice = (link) => {
         const result = webApp.openInvoice(link, invoiceCallback)
         onResult('openInvoice', link, result)
+    }
+
+    const showPopupCallback = useCallback(async (data) => {
+        onReceivedEvent('showPopup_Callback', data)
+    }, []);
+
+    const onShowPopup = (params) => {
+        const json = JSON.parse(params)
+        webApp.showPopup(json, showPopupCallback)
+    }
+
+    const showAlertCallback = useCallback(async (data) => {
+        onReceivedEvent('showAlert_Callback', data)
+    }, []);
+
+    const onShowAlert = (message) => {
+        webApp.showAlert(message, showAlertCallback)
+    }
+
+    const showConfirmCallback = useCallback(async (data) => {
+        onReceivedEvent('showConfirm_Callback', data)
+    }, []);
+
+    const onShowConfirm = (message) => {
+        webApp.showConfirm(message, showConfirmCallback)
     }
 
     return (
@@ -193,6 +218,36 @@ const InputsScreen = () => {
                 fieldhint={`Enter a valid invoice url`}
                 buttonlabel={'Execute'}
                 onSubmit={onOpenInvoice}
+            />
+
+            <TelegramMiniForm
+                fieldlabel={'showPopup'}
+                fielddescription={
+                    'Bot API 6.2+ A method that shows a native popup described by the params argument of the type PopupParams. The Mini App will receive the event popupClosed when the popup is closed. If an optional callback parameter was passed, the callback function will be called and the field id of the pressed button will be passed as the first argument.'
+                }
+                fieldhint={`Enter a valid PopupParams json`}
+                buttonlabel={'Execute'}
+                onSubmit={onShowPopup}
+            />
+
+            <TelegramMiniForm
+                fieldlabel={'showAlert'}
+                fielddescription={
+                    'Bot API 6.2+ A method that shows message in a simple alert with a \'Close\' button. If an optional callback parameter was passed, the callback function will be called when the popup is closed.'
+                }
+                fieldhint={`Enter a message`}
+                buttonlabel={'Execute'}
+                onSubmit={onShowAlert}
+            />
+
+            <TelegramMiniForm
+                fieldlabel={'showConfirm'}
+                fielddescription={
+                    '\tBot API 6.2+ A method that shows message in a simple confirmation window with \'OK\' and \'Cancel\' buttons. If an optional callback parameter was passed, the callback function will be called when the popup is closed and the first argument will be a boolean indicating whether the user pressed the \'OK\' button.'
+                }
+                fieldhint={`Enter a message`}
+                buttonlabel={'Execute'}
+                onSubmit={onShowConfirm}
             />
         </div>
     );
