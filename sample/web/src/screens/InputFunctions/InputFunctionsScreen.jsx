@@ -1,13 +1,13 @@
 import React, {useCallback} from 'react';
 import TelegramHeader from "../../components/Header/TelegramHeader";
 import TelegramText from "../../components/Text/TelegramText";
-import './InputsScreen.css';
+import './InputFunctionsScreen.css';
 import {useTelegram} from "../../hooks/useTelegram";
 import TelegramMiniForm from "../../components/MiniForm/TelegramMiniForm";
 import TelegramOptionsForm from "../../components/OptionsForm/TelegramOptionsForm";
 import TelegramButton from "../../components/Button/TelegramButton";
 
-const InputsScreen = () => {
+const InputFunctionsScreen = () => {
     const {webApp} = useTelegram()
 
     const onResult = (functionName, argument, result) => {
@@ -258,4 +258,4 @@ const InputsScreen = () => {
     );
 };
 
-export default InputsScreen;
+export default InputFunctionsScreen;

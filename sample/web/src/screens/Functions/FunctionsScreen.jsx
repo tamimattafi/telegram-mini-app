@@ -9,20 +9,25 @@ import TelegramDetailedButton from "../../components/DetailedButton/TelegramDeta
 const FunctionsScreen = () => {
     const {webApp} = useTelegram()
 
-    const onToggleMainButton = () => {
-        if (!webApp.MainButton.isVisible) {
-            webApp.MainButton.show()
-        } else {
-            webApp.MainButton.hide()
-        }
+    const onResult = (functionName, result) => {
+        // Show function call result using an alert
+        webApp.showAlert(`${functionName}() returned result(${result})`)
     }
 
-    const onToggleBackButton = () => {
-        if (!webApp.BackButton.isVisible) {
-            webApp.BackButton.show()
-        } else {
-            webApp.BackButton.hide()
-        }
+    const onReceivedEvent = (event, data) => {
+        // Show function call result using an alert
+        webApp.showAlert(`received event(${event}) with data(${data})`)
+    }
+
+    // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
+    const onEnableClosingConfirmation = () => {
+        const result = webApp.enableClosingConfirmation()
+        onResult('enableClosingConfirmation', result)
+    }
+
+    const onDisableClosingConfirmation = () => {
+        const result = webApp.disableClosingConfirmation()
+        onResult('disableClosingConfirmation', result)
     }
 
     const onClose = () => {
@@ -42,7 +47,7 @@ const FunctionsScreen = () => {
                     'Bot API 6.2+ A method that enables a confirmation dialog while the user is trying to close the Mini App.'
                 }
                 buttonlabel={'Execute'}
-                onClick={webApp.enableClosingConfirmation}
+                onClick={onEnableClosingConfirmation}
             />
 
             <TelegramDetailedButton
@@ -51,7 +56,7 @@ const FunctionsScreen = () => {
                     'Bot API 6.2+ A method that disables the confirmation dialog while the user is trying to close the Mini App.'
                 }
                 buttonlabel={'Execute'}
-                onClick={webApp.disableClosingConfirmation}
+                onClick={onDisableClosingConfirmation}
             />
         </div>
     );

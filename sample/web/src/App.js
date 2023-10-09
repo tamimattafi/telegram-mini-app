@@ -6,7 +6,7 @@ import Main from "./screens/Main/MainScreen";
 import FunctionsScreen from "./screens/Functions/FunctionsScreen";
 import DataScreen from "./screens/Data/DataScreen";
 import EventsScreen from "./screens/Events/EventsScreen";
-import InputsScreen from "./screens/Inputs/InputsScreen";
+import InputFunctionsScreen from "./screens/InputFunctions/InputFunctionsScreen";
 import {PATH_FUNCTIONS, PATH_DATA, PATH_EVENTS, PATH_INPUTS, PATH_MAIN} from "./constants/Paths";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
                 <Route path={PATH_FUNCTIONS} element={<FunctionsScreen/>}/>
                 <Route path={PATH_DATA} element={<DataScreen/>}/>
                 <Route path={PATH_EVENTS} element={<EventsScreen/>}/>
-                <Route path={PATH_INPUTS} element={<InputsScreen/>}/>
+                <Route path={PATH_INPUTS} element={<InputFunctionsScreen/>}/>
             </Routes>
         </div>
     );
