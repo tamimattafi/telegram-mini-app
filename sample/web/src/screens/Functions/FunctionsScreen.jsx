@@ -19,6 +19,16 @@ const FunctionsScreen = () => {
         webApp.showAlert(`received event(${event}) with data(${data})`)
     }
 
+    const executeMethod = (methodName, method) => {
+        try {
+            const result = method()
+            onResult(methodName, result)
+        } catch (error) {
+            const errorResult = `error_${error}`
+            onResult(methodName, errorResult)
+        }
+    }
+
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onReady = () => {
         const result = webApp.ready()
@@ -31,7 +41,7 @@ const FunctionsScreen = () => {
     }
 
     const onClose = () => {
-        webApp.exit()
+        webApp.close()
     }
 
     const onEnableClosingConfirmation = () => {
@@ -72,8 +82,9 @@ const FunctionsScreen = () => {
     }, []);
 
     const onRequestContact = () => {
-        const result = webApp.requestContact(requestContactCallback)
-        onResult('requestContact', result)
+        executeMethod('requestContact', () => {
+            webApp.requestContact(requestContactCallback)
+        })
     }
 
     return (
