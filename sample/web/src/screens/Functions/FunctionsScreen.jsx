@@ -4,6 +4,7 @@ import TelegramText from "../../components/Text/TelegramText";
 import TelegramButton from "../../components/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import './FunctionsScreen.css';
+import TelegramDetailedButton from "../../components/DetailedButton/TelegramDetailedButton";
 
 const FunctionsScreen = () => {
     const {webApp} = useTelegram()
@@ -34,9 +35,24 @@ const FunctionsScreen = () => {
                 <TelegramText className={'telegramTitle'}>Functions Screen</TelegramText>
             </TelegramHeader>
 
-            <TelegramButton onClick={onToggleMainButton}>Toggle Menu Button</TelegramButton>
-            <TelegramButton onClick={onToggleBackButton}>Toggle Back Button</TelegramButton>
-            <TelegramButton onClick={onClose}>Exit</TelegramButton>
+
+            <TelegramDetailedButton
+                buttontitle={'enableClosingConfirmation()'}
+                buttondescription={
+                    'Bot API 6.2+ A method that enables a confirmation dialog while the user is trying to close the Mini App.'
+                }
+                buttonlabel={'Execute'}
+                onClick={webApp.enableClosingConfirmation}
+            />
+
+            <TelegramDetailedButton
+                buttontitle={'disableClosingConfirmation()'}
+                buttondescription={
+                    'Bot API 6.2+ A method that disables the confirmation dialog while the user is trying to close the Mini App.'
+                }
+                buttonlabel={'Execute'}
+                onClick={webApp.disableClosingConfirmation}
+            />
         </div>
     );
 };
