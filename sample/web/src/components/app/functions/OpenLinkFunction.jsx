@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTelegram} from "../../../hooks/useTelegram";
-import TelegramOptionsForm from "../../kit/OptionsForm/TelegramOptionsForm";
+import TelegramMiniFormWithOptions from "../../kit/MiniFormWithOptions/TelegramMiniFormWithOptions";
 
 
 /**
@@ -29,7 +29,7 @@ const OpenLinkFunction = () => {
     const options = ['{ "try_instant_view": true }']
 
     return (
-        <TelegramOptionsForm
+        <TelegramMiniFormWithOptions
             fieldlabel={'openLink(url[, options])'}
             fielddescription={
                 'A method that opens a link in an external browser. The Mini App will not be closed.' +

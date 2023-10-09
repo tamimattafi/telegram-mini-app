@@ -10,7 +10,7 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
  */
 const IsVersionAtLeastFunction = () => {
-    const {webApp, onReceivedEvent, executeArgumentMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     // Check this section for more details https://core.telegram.org/bots/webapps#initializing-mini-apps
     const onIsVersionAtLeast = (version) => {

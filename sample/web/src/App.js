@@ -11,7 +11,12 @@ import {
     PATH_MAIN,
     PATH_FUNCTIONS_BASIC,
     PATH_FUNCTIONS_ALERTS,
-    PATH_FUNCTIONS_EVENTS, PATH_FUNCTIONS_BOT, PATH_FUNCTIONS_LINKS, PATH_FUNCTIONS_THEME, PATH_FUNCTIONS_QR
+    PATH_FUNCTIONS_EVENTS,
+    PATH_FUNCTIONS_BOT,
+    PATH_FUNCTIONS_LINKS,
+    PATH_FUNCTIONS_THEME,
+    PATH_FUNCTIONS_QR,
+    PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK
 } from "./constants/Paths";
 import BasicFunctionsScreen from "./screens/functions/basic/BasicFunctionsScreen";
 import AlertFunctionsScreen from "./screens/functions/alerts/AlertFunctionsScreen";
@@ -20,6 +25,7 @@ import BotFunctionsScreen from "./screens/functions/bot/BotFunctionsScreen";
 import LinkFunctionsScreen from "./screens/functions/links/LinkFunctionsScreen";
 import ThemeFunctionsScreen from "./screens/functions/theme/ThemeFunctionsScreen";
 import QrFunctionsScreen from "./screens/functions/qr/QrFunctionsScreen";
+import MainButtonScreen from "./screens/buttons/main/MainButtonScreen";
 
 function App() {
     const {webApp} = useTelegram()
@@ -29,11 +35,17 @@ function App() {
         navigate(-1)
     }, [navigate])
 
+    const onMainClick = useCallback(() => {
+        webApp.showAlert("Main button click")
+    }, [webApp])
+
     useEffect(() => {
         webApp.ready()
         webApp.BackButton.onClick(onBackClick)
+        webApp.MainButton.onClick(onMainClick)
         return () => {
             webApp.BackButton.offClick(onBackClick)
+            webApp.MainButton.offClick(onMainClick)
         };
     }, [webApp])
 
@@ -51,6 +63,8 @@ function App() {
                 <Route path={PATH_FUNCTIONS_LINKS} element={<LinkFunctionsScreen/>}/>
                 <Route path={PATH_FUNCTIONS_THEME} element={<ThemeFunctionsScreen/>}/>
                 <Route path={PATH_FUNCTIONS_QR} element={<QrFunctionsScreen/>}/>
+                <Route path={PATH_BUTTONS_MAIN} element={<MainButtonScreen/>}/>
+                <Route path={PATH_BUTTONS_BACK} element={<MainButtonScreen/>}/>
             </Routes>
         </div>
     );

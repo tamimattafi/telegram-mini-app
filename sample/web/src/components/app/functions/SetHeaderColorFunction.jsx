@@ -15,7 +15,7 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
  */
 const SetHeaderColorFunction = () => {
-    const {webApp, onReceivedEvent, executeArgumentMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     const onSetHeaderColor = (color) => {
         executeArgumentMethod(

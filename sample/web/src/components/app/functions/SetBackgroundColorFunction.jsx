@@ -12,7 +12,7 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#initializing-mini-apps
  */
 const SetBackgroundColorFunction = () => {
-    const {webApp, onReceivedEvent, executeArgumentMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     const onSetBackgroundColor = (color) => {
         executeArgumentMethod(
