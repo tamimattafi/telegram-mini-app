@@ -4,7 +4,7 @@ import TelegramButton from "../Button/TelegramButton";
 import './TelegramDetailedButton.css';
 import TelegramText from "../Text/TelegramText";
 
-const TelegramMiniForm = (props) => {
+const TelegramDetailedButton = (props) => {
     return (
         <div {...props} className={'telegramDetailedButton ' + props.className}>
             <TelegramText className={'telegramSubtitle'}>{props.buttontitle}</TelegramText>
@@ -14,5 +14,5 @@ const TelegramMiniForm = (props) => {
     );
 };
 
-export default TelegramMiniForm;
+export default TelegramDetailedButton;
 

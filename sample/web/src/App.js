@@ -1,18 +1,40 @@
 import './App.css';
-import {useEffect} from "react";
+import {useCallback, useEffect} from "react";
 import {useTelegram} from "./hooks/useTelegram";
-import {Route, Routes} from "react-router-dom";
-import Main from "./screens/Main/MainScreen";
-import FunctionsScreen from "./screens/Functions/FunctionsScreen";
-import DataScreen from "./screens/Data/DataScreen";
-import EventsScreen from "./screens/Events/EventsScreen";
-import {PATH_FUNCTIONS, PATH_DATA, PATH_EVENTS, PATH_MAIN} from "./constants/Paths";
+import {Route, Routes, useNavigate} from "react-router-dom";
+import Main from "./screens/main/MainScreen";
+import FunctionsScreen from "./screens/functions/main/FunctionsScreen";
+import DataScreen from "./screens/data/DataScreen";
+import {
+    PATH_FUNCTIONS,
+    PATH_DATA,
+    PATH_MAIN,
+    PATH_FUNCTIONS_BASIC,
+    PATH_FUNCTIONS_ALERTS,
+    PATH_FUNCTIONS_EVENTS, PATH_FUNCTIONS_BOT, PATH_FUNCTIONS_LINKS, PATH_FUNCTIONS_THEME, PATH_FUNCTIONS_QR
+} from "./constants/Paths";
+import BasicFunctionsScreen from "./screens/functions/basic/BasicFunctionsScreen";
+import AlertFunctionsScreen from "./screens/functions/alerts/AlertFunctionsScreen";
+import EventFunctionsScreen from "./screens/functions/events/EventFunctionsScreen";
+import BotFunctionsScreen from "./screens/functions/bot/BotFunctionsScreen";
+import LinkFunctionsScreen from "./screens/functions/links/LinkFunctionsScreen";
+import ThemeFunctionsScreen from "./screens/functions/theme/ThemeFunctionsScreen";
+import QrFunctionsScreen from "./screens/functions/qr/QrFunctionsScreen";
 
 function App() {
     const {webApp} = useTelegram()
+    const navigate = useNavigate();
+
+    const onBackClick = useCallback(() => {
+        navigate(-1)
+    }, [navigate])
 
     useEffect(() => {
         webApp.ready()
+        webApp.BackButton.onClick(onBackClick)
+        return () => {
+            webApp.BackButton.offClick(onBackClick)
+        };
     }, [webApp])
 
     return (
@@ -20,9 +42,15 @@ function App() {
             <Routes>
                 <Route index element={<Main/>}/>
                 <Route path={PATH_MAIN} element={<Main/>}/>
-                <Route path={PATH_FUNCTIONS} element={<FunctionsScreen/>}/>
                 <Route path={PATH_DATA} element={<DataScreen/>}/>
-                <Route path={PATH_EVENTS} element={<EventsScreen/>}/>
+                <Route path={PATH_FUNCTIONS} element={<FunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_BASIC} element={<BasicFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_ALERTS} element={<AlertFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_EVENTS} element={<EventFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_BOT} element={<BotFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_LINKS} element={<LinkFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_THEME} element={<ThemeFunctionsScreen/>}/>
+                <Route path={PATH_FUNCTIONS_QR} element={<QrFunctionsScreen/>}/>
             </Routes>
         </div>
     );

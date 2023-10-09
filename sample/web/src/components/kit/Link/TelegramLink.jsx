@@ -1,4 +1,5 @@
 import React from 'react';
+import './TelegramLink.css';
 
 const TelegramLink = (props) => {
     return (

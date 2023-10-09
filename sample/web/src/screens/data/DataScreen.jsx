@@ -2,9 +2,9 @@ import React from 'react';
 import TelegramHeader from "../../components/kit/Header/TelegramHeader";
 import TelegramText from "../../components/kit/Text/TelegramText";
 import {useTelegram} from "../../hooks/useTelegram";
-import './DataScreen.css';
 import TelegramDataBlock from "../../components/kit/DataBlock/TelegramDataBlock";
 import TelegramJson from "../../components/kit/Json/TelegramJson";
+import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
 
 const DataScreen = () => {
     const { webApp } = useTelegram()
@@ -55,7 +55,7 @@ const DataScreen = () => {
     const themeParams = webApp.themeParams
 
     return (
-        <div className={'dataScreen'}>
+        <TelegramScreen showbackbutton={true}>
             <TelegramHeader>
                 <TelegramText className={'telegramTitle'}>Data Screen</TelegramText>
             </TelegramHeader>
@@ -84,7 +84,7 @@ const DataScreen = () => {
             <TelegramDataBlock>
                 <TelegramJson src={themeParams}/>
             </TelegramDataBlock>
-        </div>
+        </TelegramScreen>
     );
 };
 
