@@ -9,11 +9,12 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#mainbutton
  */
 const SetTextMainButton = () => {
-    const {webApp, executeMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     const onSetText = (text) => {
-        executeMethod(
+        executeArgumentMethod(
             'MainButton.setText',
+            text,
             () => webApp.MainButton.setText(text)
         )
     }

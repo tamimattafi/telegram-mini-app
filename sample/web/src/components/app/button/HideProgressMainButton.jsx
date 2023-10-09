@@ -11,7 +11,7 @@ const HideProgressMainButton = () => {
     const {webApp, executeMethod} = useTelegram()
 
     const onHideProgress = () => {
-        executeMethod('MainButton.hideProgress', webApp.MainButton.hideProgress)
+        executeMethod('MainButton.hideProgress', webApp.MainButton.hideProgress, true)
     }
 
     return (

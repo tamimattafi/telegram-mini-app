@@ -14,7 +14,7 @@ const ShowMainButton = () => {
     const {webApp, executeMethod} = useTelegram()
 
     const onShow = () => {
-        executeMethod('MainButton.show', webApp.MainButton.show)
+        executeMethod('MainButton.show', webApp.MainButton.show, true)
     }
 
     return (

@@ -16,12 +16,13 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#mainbutton
  */
 const SetParamsMainButton = () => {
-    const {webApp, executeMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     const onSetParams = (text) => {
         const json = JSON.parse(text)
-        executeMethod(
+        executeArgumentMethod(
             'MainButton.setParams',
+            text,
             () => webApp.MainButton.setParams(json)
         )
     }

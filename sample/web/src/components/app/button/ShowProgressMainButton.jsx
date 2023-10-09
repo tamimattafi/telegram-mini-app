@@ -21,7 +21,8 @@ const ShowProgressMainButton = () => {
         const leaveActive= options[0] === 'true'
         executeMethod(
             'MainButton.showProgress',
-            () => webApp.MainButton.showProgress(leaveActive)
+            () => webApp.MainButton.showProgress(leaveActive),
+            true
         )
     }
 

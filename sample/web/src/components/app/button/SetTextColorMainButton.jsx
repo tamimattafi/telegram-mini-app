@@ -9,11 +9,12 @@ import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
  * @see https://core.telegram.org/bots/webapps#mainbutton
  */
 const SetTextColorMainButton = () => {
-    const {webApp, executeMethod} = useTelegram()
+    const {webApp, executeArgumentMethod} = useTelegram()
 
     const onSetTextColor = (color) => {
-        executeMethod(
+        executeArgumentMethod(
             'MainButton.setTextColor',
+            color,
             () => { webApp.MainButton.textColor = color }
         )
     }

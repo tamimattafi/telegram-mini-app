@@ -11,7 +11,7 @@ const HideMainButton = () => {
     const {webApp, executeMethod} = useTelegram()
 
     const onHide = () => {
-        executeMethod('MainButton.hide', webApp.MainButton.hide)
+        executeMethod('MainButton.hide', webApp.MainButton.hide, true)
     }
 
     return (
