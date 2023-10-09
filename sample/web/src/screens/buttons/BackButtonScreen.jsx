@@ -1,9 +1,9 @@
 import React from 'react';
-import TelegramScreen from "../../../components/kit/Screen/TelegramScreen";
-import TelegramHeader from "../../../components/kit/Header/TelegramHeader";
-import TelegramText from "../../../components/kit/Text/TelegramText";
-import ShowBackButton from "../../../components/app/button/ShowBackButton";
-import HideBackButton from "../../../components/app/button/HideBackButton";
+import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
+import ShowBackButton from "../../components/app/button/ShowBackButton";
+import HideBackButton from "../../components/app/button/HideBackButton";
 
 const BackButtonScreen = () => {
     return (

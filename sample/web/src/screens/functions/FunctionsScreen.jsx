@@ -1,16 +1,16 @@
 import React from 'react';
-import TelegramHeader from "../../../components/kit/Header/TelegramHeader";
-import TelegramText from "../../../components/kit/Text/TelegramText";
-import TelegramDetailedButton from "../../../components/kit/DetailedButton/TelegramDetailedButton";
+import TelegramHeader from "../../components/kit/Header/TelegramHeader";
+import TelegramText from "../../components/kit/Text/TelegramText";
+import TelegramDetailedButton from "../../components/kit/DetailedButton/TelegramDetailedButton";
 import {useNavigate} from "react-router-dom";
 import {
     PATH_FUNCTIONS_ALERTS,
     PATH_FUNCTIONS_BASIC,
     PATH_FUNCTIONS_BOT,
     PATH_FUNCTIONS_EVENTS, PATH_FUNCTIONS_LINKS, PATH_FUNCTIONS_QR, PATH_FUNCTIONS_THEME
-} from "../../../constants/Paths";
-import BotAPIHeader from "../../../components/app/info/BotAPIHeader/BotAPIHeader";
-import TelegramScreen from "../../../components/kit/Screen/TelegramScreen";
+} from "../../constants/Paths";
+import BotAPIHeader from "../../components/app/info/BotAPIHeader/BotAPIHeader";
+import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
 
 const FunctionsScreen = () => {
     const navigate = useNavigate();

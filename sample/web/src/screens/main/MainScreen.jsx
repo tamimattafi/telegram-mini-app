@@ -4,7 +4,7 @@ import TelegramText from "../../components/kit/Text/TelegramText";
 import TelegramButton from "../../components/kit/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
-import {PATH_FUNCTIONS, PATH_DATA, PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK} from "../../constants/Paths";
+import {PATH_FUNCTIONS, PATH_DATA, PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK, PATH_HAPTIC} from "../../constants/Paths";
 import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
 
 const Main = () => {
@@ -39,6 +39,11 @@ const Main = () => {
             <TelegramButton onClick={() => navigate(PATH_BUTTONS_BACK)}>Back Button Screen</TelegramButton>
             <TelegramText className={'telegramHint'}>
                 Customize the back button and trigger different functions and events
+            </TelegramText>
+
+            <TelegramButton onClick={() => navigate(PATH_HAPTIC)}>Haptic Feedback Screen</TelegramButton>
+            <TelegramText className={'telegramHint'}>
+                Trigger sounds and effects that are going to be played by the Telegram app
             </TelegramText>
         </TelegramScreen>
     );

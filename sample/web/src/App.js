@@ -3,7 +3,7 @@ import {useCallback, useEffect} from "react";
 import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Main from "./screens/main/MainScreen";
-import FunctionsScreen from "./screens/functions/main/FunctionsScreen";
+import FunctionsScreen from "./screens/functions/FunctionsScreen";
 import DataScreen from "./screens/data/DataScreen";
 import {
     PATH_FUNCTIONS,
@@ -16,17 +16,18 @@ import {
     PATH_FUNCTIONS_LINKS,
     PATH_FUNCTIONS_THEME,
     PATH_FUNCTIONS_QR,
-    PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK
+    PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK, PATH_HAPTIC
 } from "./constants/Paths";
-import BasicFunctionsScreen from "./screens/functions/basic/BasicFunctionsScreen";
-import AlertFunctionsScreen from "./screens/functions/alerts/AlertFunctionsScreen";
-import EventFunctionsScreen from "./screens/functions/events/EventFunctionsScreen";
-import BotFunctionsScreen from "./screens/functions/bot/BotFunctionsScreen";
-import LinkFunctionsScreen from "./screens/functions/links/LinkFunctionsScreen";
-import ThemeFunctionsScreen from "./screens/functions/theme/ThemeFunctionsScreen";
-import QrFunctionsScreen from "./screens/functions/qr/QrFunctionsScreen";
-import MainButtonScreen from "./screens/buttons/main/MainButtonScreen";
-import BackButtonScreen from "./screens/buttons/main/BackButtonScreen";
+import BasicFunctionsScreen from "./screens/functions/BasicFunctionsScreen";
+import AlertFunctionsScreen from "./screens/functions/AlertFunctionsScreen";
+import EventFunctionsScreen from "./screens/functions/EventFunctionsScreen";
+import BotFunctionsScreen from "./screens/functions/BotFunctionsScreen";
+import LinkFunctionsScreen from "./screens/functions/LinkFunctionsScreen";
+import ThemeFunctionsScreen from "./screens/functions/ThemeFunctionsScreen";
+import QrFunctionsScreen from "./screens/functions/QrFunctionsScreen";
+import MainButtonScreen from "./screens/buttons/MainButtonScreen";
+import BackButtonScreen from "./screens/buttons/BackButtonScreen";
+import HapticFeedbackScreen from "./screens/haptic/HapticFeedbackScreen";
 
 function App() {
     const {webApp} = useTelegram()
@@ -66,6 +67,7 @@ function App() {
                 <Route path={PATH_FUNCTIONS_QR} element={<QrFunctionsScreen/>}/>
                 <Route path={PATH_BUTTONS_MAIN} element={<MainButtonScreen/>}/>
                 <Route path={PATH_BUTTONS_BACK} element={<BackButtonScreen/>}/>
+                <Route path={PATH_HAPTIC} element={<HapticFeedbackScreen/>}/>
             </Routes>
         </div>
     );
