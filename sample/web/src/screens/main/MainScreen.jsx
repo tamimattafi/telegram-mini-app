@@ -4,8 +4,16 @@ import TelegramText from "../../components/kit/Text/TelegramText";
 import TelegramButton from "../../components/kit/Button/TelegramButton";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useNavigate} from "react-router-dom";
-import {PATH_FUNCTIONS, PATH_DATA, PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK, PATH_HAPTIC} from "../../constants/Paths";
+import {
+    PATH_FUNCTIONS,
+    PATH_DATA,
+    PATH_BUTTONS_MAIN,
+    PATH_BUTTONS_BACK,
+    PATH_HAPTIC,
+    PATH_FUNCTIONS_BASIC
+} from "../../constants/Paths";
 import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
+import TelegramDetailedButton from "../../components/kit/DetailedButton/TelegramDetailedButton";
 
 const Main = () => {
     const {user} = useTelegram()
@@ -21,30 +29,50 @@ const Main = () => {
 
             <TelegramText className={'telegramSubtitle'}>Navigate to a screen:</TelegramText>
 
-            <TelegramButton onClick={() => navigate(PATH_DATA)}>Data Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Check the data transmitted by telegram or bot api to the mini app like initDataUnsafe, themeParams and more
-            </TelegramText>
+            <TelegramDetailedButton
+                buttontitle={'Data Screen'}
+                buttondescription={
+                    'Check the data transmitted by telegram or bot api to the mini app like initDataUnsafe, themeParams and more'
+                }
+                buttonlabel={'Navigate to Data Screen'}
+                onButtomClick={() => navigate(PATH_DATA)}
+            />
 
-            <TelegramButton onClick={() => navigate(PATH_FUNCTIONS)}>Functions Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Trigger different functions and api calls on the mini app like toggling system buttons, triggering events and more
-            </TelegramText>
+            <TelegramDetailedButton
+                buttontitle={'Functions Screen'}
+                buttondescription={
+                    'Trigger different functions and api calls on the mini app like toggling system buttons, triggering events and more'
+                }
+                buttonlabel={'Navigate to Functions Screen'}
+                onButtomClick={() => navigate(PATH_FUNCTIONS)}
+            />
 
-            <TelegramButton onClick={() => navigate(PATH_BUTTONS_MAIN)}>Main Button Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Customize the main button and trigger different functions and events
-            </TelegramText>
+            <TelegramDetailedButton
+                buttontitle={'Main Button Screen'}
+                buttondescription={
+                    'Customize the main button and trigger different functions and events'
+                }
+                buttonlabel={'Navigate to Main Button Screen'}
+                onButtomClick={() => navigate(PATH_BUTTONS_MAIN)}
+            />
 
-            <TelegramButton onClick={() => navigate(PATH_BUTTONS_BACK)}>Back Button Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Customize the back button and trigger different functions and events
-            </TelegramText>
+            <TelegramDetailedButton
+                buttontitle={'Back Button Screen'}
+                buttondescription={
+                    'Customize the back button and trigger different functions and events'
+                }
+                buttonlabel={'Navigate to Back Button Screen'}
+                onButtomClick={() => navigate(PATH_BUTTONS_BACK)}
+            />
 
-            <TelegramButton onClick={() => navigate(PATH_HAPTIC)}>Haptic Feedback Screen</TelegramButton>
-            <TelegramText className={'telegramHint'}>
-                Trigger sounds and effects that are going to be played by the Telegram app
-            </TelegramText>
+            <TelegramDetailedButton
+                buttontitle={'Haptic Feedback Screen'}
+                buttondescription={
+                    'Trigger sounds and effects that are going to be played by the Telegram app'
+                }
+                buttonlabel={'Navigate to Haptic Feedback Screen'}
+                onButtomClick={() => navigate(PATH_HAPTIC)}
+            />
         </TelegramScreen>
     );
 };
