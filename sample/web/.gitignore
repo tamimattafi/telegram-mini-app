@@ -57,3 +57,6 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Used to store server related data
+src/logic/server/Variables.js
