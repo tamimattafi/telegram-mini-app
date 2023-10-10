@@ -9,8 +9,8 @@ import API_URL from "./Variables"
  */
 export function sendMessageToServer(message, queryId, onResponse) {
     const body = {
-        queryId,
-        message
+        queryId: queryId,
+        message: message
     }
 
     const messagesEndpoint = `${API_URL}/messages`

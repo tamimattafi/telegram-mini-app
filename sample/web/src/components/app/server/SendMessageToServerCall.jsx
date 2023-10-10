@@ -19,7 +19,8 @@ const SendMessageToServerCall = () => {
 
     const onSendMessage = (message) => {
         sendMessageToServer(message, queryId, (response) => {
-            webApp.showAlert(`response: ${response}`)
+            const responseJson = JSON.stringify(response)
+            webApp.showAlert(`response: ${responseJson}`)
         })
     }
 
