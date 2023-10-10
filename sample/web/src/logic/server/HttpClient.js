@@ -1,4 +1,4 @@
-import API_URL from "./Variables"
+import {API_URL} from "./Variables"
 
 /**
  * Uses simple fetch() to send message to the bot server using REST API
