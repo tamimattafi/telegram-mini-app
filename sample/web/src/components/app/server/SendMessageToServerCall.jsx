@@ -18,7 +18,9 @@ const SendMessageToServerCall = () => {
 
 
     const onSendMessage = (message) => {
-        sendMessageToServer(message, queryId)
+        sendMessageToServer(message, queryId, (response) => {
+            webApp.showAlert(`response: ${response}`)
+        })
     }
 
     return (
