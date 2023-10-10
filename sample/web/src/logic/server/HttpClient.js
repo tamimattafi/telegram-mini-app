@@ -12,7 +12,7 @@ export const sendMessageToServer = async (message, queryId) => {
         message: message
     }
 
-    const messagesEndpoint = `${API_URL}/messages`
+    const messagesEndpoint = `${API_URL}/message`
     return await fetch(messagesEndpoint, {
         method: 'POST',
         headers: {
