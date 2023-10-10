@@ -5,20 +5,19 @@ import API_URL from "./Variables"
  *
  * @param message the message to be sent
  * @param queryId get from webApp.initDataUnsafe?.query_id
- * @param onResponse the callback that will handle the response
  */
-export function sendMessageToServer(message, queryId, onResponse) {
+export const sendMessageToServer = async (message, queryId) => {
     const body = {
         queryId: queryId,
         message: message
     }
 
     const messagesEndpoint = `${API_URL}/messages`
-    fetch(messagesEndpoint, {
+    return await fetch(messagesEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(body)
-    }).then(onResponse)
+    })
 }

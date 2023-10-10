@@ -17,11 +17,10 @@ const SendMessageToServerCall = () => {
     const queryId = webApp.initDataUnsafe?.query_id
 
 
-    const onSendMessage = (message) => {
-        sendMessageToServer(message, queryId, (response) => {
-            const responseJson = JSON.stringify(response)
-            webApp.showAlert(`response: ${responseJson}`)
-        })
+    const onSendMessage = async (message) => {
+        const response = await sendMessageToServer(message, queryId)
+        const responseJson = JSON.stringify(response)
+        webApp.showAlert(`response: ${responseJson}`)
     }
 
     return (
