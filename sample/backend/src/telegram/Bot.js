@@ -99,11 +99,11 @@ function listenToMiniAppData(bot) {
         if (ctx.message?.web_app_data?.data) {
             try {
                 const data = ctx.message?.web_app_data?.data
-                await bot.sendMessage(ctx.message.chat.id, 'Got message from MiniApp')
-                await bot.sendMessage(ctx.message.chat.id, data)
+                await ctx.telegram.sendMessage(ctx.message.chat.id, 'Got message from MiniApp')
+                await ctx.telegram.sendMessage(ctx.message.chat.id, data)
             } catch (e) {
-                await bot.sendMessage(ctx.message.chat.id, 'Got message from MiniApp but failed to read')
-                await bot.sendMessage(ctx.message.chat.id, e)
+                await ctx.telegram.sendMessage(ctx.message.chat.id, 'Got message from MiniApp but failed to read')
+                await ctx.telegram.sendMessage(ctx.message.chat.id, e)
             }
         }
     });
