@@ -1,4 +1,4 @@
 import {launchApp} from "./app/Application.js";
 
 // Launch our application
-launchApp().then(r => 'App launched!')
+launchApp()

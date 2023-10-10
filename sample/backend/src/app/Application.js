@@ -6,9 +6,9 @@ import {launchApi, MESSAGE_PATH} from "../http/Api.js";
  * Call this method inside index.js to launch the bot and the api
  *
  */
-export const launchApp = async () => {
+export const launchApp = () => {
     // Read token from .env file and use it to launch telegram bot
-    const bot = await launchBot(process.env.BOT_TOKEN)
+    const bot = launchBot(process.env.BOT_TOKEN)
 
     // Launch api
     const api = launchApi()

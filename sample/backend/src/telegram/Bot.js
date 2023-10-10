@@ -11,7 +11,7 @@ import { message } from 'telegraf/filters'
  * Make sure to save the token in a safe and secure place. Anyone with the access can control your bot.
  *
  */
-export const launchBot = async (token) => {
+export const launchBot = (token) => {
     // Create a bot using the token received from @BotFather(https://t.me/BotFather)
     const bot = new Telegraf(token)
 
@@ -21,8 +21,7 @@ export const launchBot = async (token) => {
     listenToQueries(bot)
 
     // Launch the bot
-    await bot.launch()
-    console.log('bot launched')
+    bot.launch().then(() => console.log('bot launched'))
 
     // Handle stop events
     enableGracefulStop(bot)
@@ -43,7 +42,7 @@ function listenToCommands(bot) {
             reply_markup: {
                 inline_keyboard: [
                     /* Inline buttons. 2 side-by-side */
-                    [ { text: "Start Mini App", web_app: { url: "https://starlit-lokum-76ba47.netlify.app/" } } ],
+                    [ { text: "Start Mini App", web_app: { url: process.env.APP_URL } } ],
                 ]
             }
         })
