@@ -21,10 +21,12 @@ export function launchBot(token) {
     listenToQueries(bot)
 
     // Launch the bot
-    bot.launch()
+    bot.launch().then(r => console.log('bot launched'))
 
     // Handle stop events
     enableGracefulStop(bot)
+
+    return bot
 }
 
 /**

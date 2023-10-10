@@ -1,5 +1,4 @@
-// Launch the telegram bot
-import { launchBot } from "./bot/bot.js";
+import {launchApp} from "./app/Application.js";
 
-// Read token from .env file and use it to launch telegram bot
-launchBot(process.env.BOT_TOKEN)
+// Launch our application
+launchApp()
