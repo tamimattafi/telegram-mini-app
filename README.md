@@ -1,5 +1,6 @@
 # telegram-mini-app
 This repository was created to showcase the functionality and api used to create bots and mini apps, it contains an example of all functions and events that a developer might need in their journey
+![Main Button](./gifs/main_button.gif)
 
 To try this bot and its mini app on production servers please visit https://t.me/mini_app_sample_bot and run the `/start` command
 > Since the free render.com is used for hosting the bot, sometimes the server might be unavailable, please contact me for redeploy
