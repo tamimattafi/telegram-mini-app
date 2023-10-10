@@ -1,0 +1,22 @@
+.telegramText {
+    color: var(--tg-theme-text-color);
+    margin: 8px;
+}
+
+.telegramTitle {
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    align-self: center;
+}
+
+.telegramSubtitle {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.telegramHint {
+    font-size: 14px;
+    color: var(--tg-theme-hint-color);
+    font-weight: normal;
+}

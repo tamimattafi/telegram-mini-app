@@ -1,0 +1,7 @@
+.telegramScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+}

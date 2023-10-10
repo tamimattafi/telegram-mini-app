@@ -1,0 +1,1 @@
+const API_URL = "https://telegram-mini-app-sample.onrender.com"

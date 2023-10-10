@@ -1,0 +1,4 @@
+.telegramLink {
+    color: var(--tg-theme-link-color);
+    cursor: pointer;
+}
