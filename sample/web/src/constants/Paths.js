@@ -5,6 +5,8 @@ export const PATH_FUNCTIONS = "/functions"
 export const PATH_BUTTONS_MAIN = "/buttons/main"
 export const PATH_BUTTONS_BACK = "/buttons/back"
 export const PATH_HAPTIC = "/haptic"
+export const PATH_SERVER = "/server"
+
 export const PATH_FUNCTIONS_BASIC = `${PATH_FUNCTIONS}/basic`
 export const PATH_FUNCTIONS_ALERTS = `${PATH_FUNCTIONS}/alerts`
 export const PATH_FUNCTIONS_EVENTS = `${PATH_FUNCTIONS}/events`

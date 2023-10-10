@@ -1,6 +1,7 @@
 import React from 'react';
 import TelegramMiniForm from "../../kit/MiniForm/TelegramMiniForm";
 import {useTelegram} from "../../../hooks/useTelegram";
+import {sendMessageToServer} from "../../../logic/server/HttpClient";
 
 
 /**
@@ -14,6 +15,7 @@ const SendMessageToServerCall = () => {
 
     // This id will be used by our backend to send messages to the chat with the user
     const queryId = webApp.initDataUnsafe?.query_id
+
 
     const onSendMessage = (message) => {
         sendMessageToServer(message, queryId)

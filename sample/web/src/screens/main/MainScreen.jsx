@@ -10,7 +10,7 @@ import {
     PATH_BUTTONS_MAIN,
     PATH_BUTTONS_BACK,
     PATH_HAPTIC,
-    PATH_FUNCTIONS_BASIC
+    PATH_FUNCTIONS_BASIC, PATH_SERVER
 } from "../../constants/Paths";
 import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
 import TelegramDetailedButton from "../../components/kit/DetailedButton/TelegramDetailedButton";
@@ -72,6 +72,15 @@ const Main = () => {
                 }
                 buttonlabel={'Navigate to Haptic Feedback Screen'}
                 onButtomClick={() => navigate(PATH_HAPTIC)}
+            />
+
+            <TelegramDetailedButton
+                buttontitle={'Server Screen'}
+                buttondescription={
+                    'Interact with the bot server through REST API'
+                }
+                buttonlabel={'Navigate to Server Screen'}
+                onButtomClick={() => navigate(PATH_SERVER)}
             />
         </TelegramScreen>
     );

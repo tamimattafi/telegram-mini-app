@@ -16,7 +16,7 @@ import {
     PATH_FUNCTIONS_LINKS,
     PATH_FUNCTIONS_THEME,
     PATH_FUNCTIONS_QR,
-    PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK, PATH_HAPTIC
+    PATH_BUTTONS_MAIN, PATH_BUTTONS_BACK, PATH_HAPTIC, PATH_SERVER
 } from "./constants/Paths";
 import BasicFunctionsScreen from "./screens/functions/BasicFunctionsScreen";
 import AlertFunctionsScreen from "./screens/functions/AlertFunctionsScreen";
@@ -28,6 +28,7 @@ import QrFunctionsScreen from "./screens/functions/QrFunctionsScreen";
 import MainButtonScreen from "./screens/buttons/MainButtonScreen";
 import BackButtonScreen from "./screens/buttons/BackButtonScreen";
 import HapticFeedbackScreen from "./screens/haptic/HapticFeedbackScreen";
+import ServerScreen from "./screens/server/ServerScreen";
 
 function App() {
     const {webApp} = useTelegram()
@@ -68,6 +69,7 @@ function App() {
                 <Route path={PATH_BUTTONS_MAIN} element={<MainButtonScreen/>}/>
                 <Route path={PATH_BUTTONS_BACK} element={<BackButtonScreen/>}/>
                 <Route path={PATH_HAPTIC} element={<HapticFeedbackScreen/>}/>
+                <Route path={PATH_SERVER} element={<ServerScreen/>}/>
             </Routes>
         </div>
     );
