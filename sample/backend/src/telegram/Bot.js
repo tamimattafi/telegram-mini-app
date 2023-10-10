@@ -11,7 +11,7 @@ import { message } from 'telegraf/filters'
  * Make sure to save the token in a safe and secure place. Anyone with the access can control your bot.
  *
  */
-export function launchBot(token) {
+export const launchBot = async (token) => {
     // Create a bot using the token received from @BotFather(https://t.me/BotFather)
     const bot = new Telegraf(token)
 
@@ -21,7 +21,8 @@ export function launchBot(token) {
     listenToQueries(bot)
 
     // Launch the bot
-    bot.launch().then(r => console.log('bot launched'))
+    await bot.launch()
+    console.log('bot launched')
 
     // Handle stop events
     enableGracefulStop(bot)

@@ -6,9 +6,9 @@ import {launchApi, MESSAGE_PATH} from "../http/Api.js";
  * Call this method inside index.js to launch the bot and the api
  *
  */
-export function launchApp() {
+export const launchApp = async () => {
     // Read token from .env file and use it to launch telegram bot
-    const bot = launchBot(process.env.BOT_TOKEN)
+    const bot = await launchBot(process.env.BOT_TOKEN)
 
     // Launch api
     const api = launchApi()
@@ -48,8 +48,16 @@ const handleMessageRequest = async (bot, request, response) => {
         await bot.answerWebAppQuery(queryId, article)
 
         // End the request with a success code
-        response.status(200).json({})
+        await response.status(200).json({
+            message: 'success!'
+        })
+
     } catch (e) {
-        response.status(500).json({})
+        const errorJson = JSON.stringify(e)
+        console.log(`handleMessageRequest error ${errorJson}`)
+
+        await response.status(500).json({
+            error: errorJson
+        })
     }
 }
